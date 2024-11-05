@@ -1,0 +1,2 @@
+cn.hutool:hutool-core:5.8.10
+cn.hutool:hutool-http:5.8.10

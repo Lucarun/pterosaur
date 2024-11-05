@@ -1,0 +1,73 @@
+soot:
+  output:
+    path: /Users/luca/dev/research/output
+    filename: Analyze_result.json
+    insFilename: Instructions.json
+  additional:
+    path: /
+  rt:
+    dir:
+  jce:
+    dir:
+
+list:
+  sootInputPaths:
+    # mall
+#    - /Users/luca/dev/2025/mall-swarm/mall-admin/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-auth/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-common/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-demo/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-gateway/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-mbg/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-monitor/target/classes
+#    - /Users/luca/dev/2025/mall-swarm/mall-portal/target/classes
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/downstream
+    # newbee
+#    - /Users/luca/dev/2025/newbee-mall/target/classes
+  scannedMybatisXmlDirs:
+    - /Users/luca/dev/research/micro_service_seclab-main/src/main/resources/mappers
+  tplPackages:
+    - org.elasticsearch
+    - com.rabbitmq
+    - org.apache
+  appPackages:
+    - cn.hutool.http
+#    - ltd.newbee.mall
+  targetPackages:
+    - cn.hutool.core
+
+logging:
+  config: classpath:log4j2.yml
+
+
+rules:
+  core:
+    path: rules/core.xml
+    pathSwitcher: on
+    thirdPartyPath: rules/java-core.xml
+    thirdPartyPathSwitcher: off
+  extend:
+    path: rules/extend.xml
+    pathSwitcher: off
+    thirdPartyPath: rules/java-extend.xml
+    thirdPartyPathSwitcher: off
+  conditional: off
+  taintFlag: off
+
+
+analysis:
+  taintSanitizeSwitcher: off
+  simpleDataPathSwitcher: off
+  onlyDataflowCallStackInter: off
+  fieldSensitiveSwitcher: on
+  sparkSwitcher: off
+  conditionSummarySwitcher: on
+
+vulexp:
+  downstream:
+        jarPath: /Users/fortsun/Desktop/test/sca-testcases/arthas-3.7.1/jar-package/arthas-tunnel-server-3.7.1-fatjar.jar
+  upstream:
+        jarPath: /Users/fortsun/Desktop/test/sca-testcases/arthas-3.7.1/jar-package/arthas-tunnel-server-3.7.1-fatjar.jar
+
+
+
