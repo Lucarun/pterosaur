@@ -28,7 +28,11 @@ public class TPLDetector {
 
     public void detect(){
         Collection<SootClass> classSnapshot = new ArrayList<>(Scene.v().getApplicationClasses());
-
+        classSnapshot.removeIf(sootClass ->
+                generalList.targetPackages.stream().anyMatch(targetPackage ->
+                        sootClass.getPackageName().startsWith(targetPackage)
+                )
+        );
         List<String> list = new ArrayList<>();
         for(SootClass sootClass : classSnapshot) {
             detectThirdPartyCalls(sootClass, list);
@@ -45,28 +49,32 @@ public class TPLDetector {
 
 
     private void detectThirdPartyCalls(SootClass appClass, List list) {
-        for (SootMethod method : appClass.getMethods()) {
-            Body body;
-            try{
-                body = method.retrieveActiveBody();
-            }catch (Exception e){
-                continue;
-            }
-            for (Unit unit : body.getUnits()) {
-                Stmt stmt = (Stmt) unit;
-                if (stmt.containsInvokeExpr()) {
-                    InvokeExpr invokeExpr = stmt.getInvokeExpr();
-                    SootMethod calledMethod = invokeExpr.getMethod();
+        try{
+            for (SootMethod method : appClass.getMethods()) {
+                Body body;
+                try{
+                    body = method.retrieveActiveBody();
+                }catch (Exception e){
+                    continue;
+                }
+                for (Unit unit : body.getUnits()) {
+                    Stmt stmt = (Stmt) unit;
+                    if (stmt.containsInvokeExpr()) {
+                        InvokeExpr invokeExpr = stmt.getInvokeExpr();
+                        SootMethod calledMethod = invokeExpr.getMethod();
 
-                    // 检测是否调用了第三方库方法
-                    String packageName = calledMethod.getDeclaringClass().getPackageName();
-                    if (isThirdPartyPackage(packageName) && isTargetPackage(packageName)) {
-                        System.out.println("Method: " + method.getSignature() +
-                                " calls third-party method: " + calledMethod.getSignature());
-                        list.add(method.getSignature() + "--->" + calledMethod.getSignature());
+                        // 检测是否调用了第三方库方法
+                        String packageName = calledMethod.getDeclaringClass().getPackageName();
+                        if (isThirdPartyPackage(packageName) && isTargetPackage(packageName)) {
+                            System.out.println("Method: " + method.getSignature() +
+                                    " calls third-party method: " + calledMethod.getSignature());
+                            list.add(method.getSignature() + "--->" + calledMethod.getSignature());
+                        }
                     }
                 }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

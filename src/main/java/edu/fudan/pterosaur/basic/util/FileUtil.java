@@ -59,7 +59,11 @@ public class FileUtil {
             if (files != null) {
                 for (File file : files) {
                     if (file.isFile() && file.getName().toLowerCase().endsWith(suffix)) {
-                        jarFilePaths.add(file.getAbsolutePath());
+                        if (JarVersionChecker.isUpperVersionJavaClass(file.getAbsolutePath(), 65)){
+                            System.out.println(" too new version : " + file.getAbsolutePath());
+                        }else{
+                            jarFilePaths.add(file.getAbsolutePath());
+                        }
                     }
                 }
             }
