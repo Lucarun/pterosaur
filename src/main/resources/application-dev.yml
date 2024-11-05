@@ -21,8 +21,7 @@ list:
 #    - /Users/luca/dev/2025/mall-swarm/mall-mbg/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-monitor/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-portal/target/classes
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/minio/downstream
-#    - /Users/luca/dev/2025/pterosaur/output/popular-components/minio/upstream
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/aliyun-java-sdk-core/downstream
     # newbee
 #    - /Users/luca/dev/2025/newbee-mall/target/classes
   scannedMybatisXmlDirs:
@@ -32,11 +31,19 @@ list:
     - com.rabbitmq
     - org.apache
   appPackages:
-#    - cn.hutool.http
-#    - ltd.newbee.mall
+    - cn.hutool.http
   targetPackages:
-    - io.minio
-
+    - com.aliyuncs.auth
+    - com.aliyuncs.endpoint
+    - com.aliyuncs.exceptions
+    - com.aliyuncs.http
+    - com.aliyuncs.policy
+    - com.aliyuncs.profile
+    - com.aliyuncs.reader
+    - com.aliyuncs.regions
+    - com.aliyuncs.transform
+    - com.aliyuncs.unmarshaller
+    - com.aliyuncs.utils
 logging:
   config: classpath:log4j2.yml
 

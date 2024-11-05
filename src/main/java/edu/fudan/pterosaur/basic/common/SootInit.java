@@ -55,7 +55,7 @@ public class SootInit {
         Options.v().set_drop_bodies_after_load(false);
         Options.v().set_no_bodies_for_excluded(true);
         Options.v().setPhaseOption("cg", "all-reachable:true");
-        //Options.v().setPhaseOption("cg.spark", "on");//SPARK生成的call graph更准确
+        Options.v().setPhaseOption("cg.spark", "on");//SPARK生成的call graph更准确
         Scene.v().setSootClassPath(Scene.v().getSootClassPath() + File.pathSeparator + Config.rtDir
                 + File.pathSeparator + Config.jceDir + File.pathSeparator + Config.dependency_path);
 

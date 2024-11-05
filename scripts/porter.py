@@ -34,7 +34,7 @@ def download_jar_from_maven_central(group_id, artifact_id, version, output_dir):
         print(f"Failed to download {artifact_id}-{version}.jar:", response.status_code)
 
 def main():
-    folder_name = "minio"  # Define your folder name
+    folder_name = "aliyun-java-sdk-core"  # Define your folder name
     # Use replace to substitute 'minio' with folder_name dynamically
     input_file = f"/Users/luca/dev/2025/pterosaur/scripts/{folder_name}/pilots.txt"  # Dynamic path for the input file
     output_dir = f"/Users/luca/dev/2025/pterosaur/output/popular-components/{folder_name}/downstream"  # Dynamic path for the output directory
