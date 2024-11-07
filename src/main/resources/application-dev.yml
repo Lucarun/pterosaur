@@ -21,7 +21,7 @@ list:
 #    - /Users/luca/dev/2025/mall-swarm/mall-mbg/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-monitor/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-portal/target/classes
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream
     # newbee
 #    - /Users/luca/dev/2025/newbee-mall/target/classes
   scannedMybatisXmlDirs:
@@ -33,9 +33,7 @@ list:
   appPackages:
     - cn.hutool.http
   targetPackages:
-    - com.rabbitmq.client
-    - com.rabbitmq.tools
-    - com.rabbitmq.utility
+    - cn.hutool.core
 logging:
   config: classpath:log4j2.yml
 

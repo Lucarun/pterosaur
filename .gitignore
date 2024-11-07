@@ -35,3 +35,4 @@ build/
 mvnw
 logs/
 *.jar
+output/tpl.txt
