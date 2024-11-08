@@ -99,7 +99,7 @@ public class TPLDetector {
         }
 
         for (String pn : generalList.appPackages) {
-            if (!packageName.startsWith(pn) && !packageName.startsWith("java.") && !packageName.startsWith("soot.") && !packageName.startsWith("org.springframework") && !packageName.startsWith("io.swagger")
+            if (!packageName.startsWith(pn) && !packageName.startsWith("java.")&& !packageName.startsWith("javax.") && !packageName.startsWith("soot.") && !packageName.startsWith("org.springframework") && !packageName.startsWith("io.swagger")
                     && !packageName.startsWith("org.slf4j") && !packageName.startsWith("com.github.pagehelper")) {
                 return true;
             }
