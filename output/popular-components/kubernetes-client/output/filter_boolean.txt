@@ -1,0 +1,3 @@
+<io.fabric8.kubernetes.client.ConfigBuilder: io.fabric8.kubernetes.client.ConfigFluent withTrustCerts(boolean)><---<io.quarkus.test.bootstrap.inject.KubectlClient: void <init>(java.lang.String)>
+<io.fabric8.kubernetes.client.ConfigBuilder: io.fabric8.kubernetes.client.ConfigFluent withTrustCerts(boolean)><---<io.quarkus.test.bootstrap.inject.KubectlClient: void <init>(java.lang.String)>
+<io.fabric8.kubernetes.client.utils.Utils: java.lang.Boolean getSystemPropertyOrEnvVar(java.lang.String,java.lang.Boolean)><---<io.fabric8.kubernetes.api.KubernetesHelper: java.lang.String getServiceURL(io.fabric8.kubernetes.api.model.Service)>

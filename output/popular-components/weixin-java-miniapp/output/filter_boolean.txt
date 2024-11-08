@@ -1,0 +1,2 @@
+<me.chanjar.weixin.open.api.WxOpenComponentService: java.lang.String getComponentAccessToken(boolean)><---<com.haoxuer.bigworld.weixin.controller.open.OpenController: java.lang.String token()>
+<me.chanjar.weixin.open.api.WxOpenComponentService: java.lang.String getComponentAccessToken(boolean)><---<com.haoxuer.bigworld.weixin.controller.rest.WechatNotifyController: java.lang.String token()>
