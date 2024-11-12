@@ -78,9 +78,30 @@ public class TPLDetector {
                         // 检测是否调用了第三方库方法
                         String packageName = calledMethod.getDeclaringClass().getPackageName();
                         if (isThirdPartyPackage(packageName) && isTargetPackage(packageName)) {
+
+                            // 遍历调用方法的参数
+                            StringBuilder calledMethodSignature = new StringBuilder(calledMethod.getSignature());
+                            List<Type> parameterTypes = calledMethod.getParameterTypes();
+                            for (int i = 0; i < parameterTypes.size(); i++) {
+                                Type paramType = parameterTypes.get(i);
+                                if (paramType instanceof RefType) {
+                                    SootClass paramClass = ((RefType) paramType).getSootClass();
+
+                                    // 判断该参数类型是否是枚举
+                                    if (paramClass.isEnum()) {
+                                        // 在输出中添加 `-enum`
+                                        calledMethodSignature = new StringBuilder(calledMethodSignature.toString()
+                                                .replace(paramClass.getName(), paramClass.getName() + "-enum"));
+                                        System.out.println("Method contains Enum: " + method.getSignature() +
+                                                " calls third-party method: " + calledMethodSignature);
+                                    }
+                                }
+                            }
+
+                            // 输出修改后的信息
                             System.out.println("Method: " + method.getSignature() +
-                                    " calls third-party method: " + calledMethod.getSignature());
-                            list.add(method.getSignature() + "--->" + calledMethod.getSignature());
+                                    " calls third-party method: " + calledMethodSignature);
+                            list.add(method.getSignature() + "--->" + calledMethodSignature);
                         }
                     }
                 }

@@ -27,22 +27,24 @@ def filter_parameter_methods(pattern, file_path, folder_path):
 def process_multiple_folders(base_folder_path):
     # 文件夹列表，列出所有需要处理的文件夹名称
     folder_names = [
-        'aliyun-java-sdk-core',
-        'amqp-client',
-        'aws-java-sdk-core',
-        'fastjson',
-        'guava',
-        'hutool-core',
-        'joda-time',
-        'kubernetes-client',
-        'minio',
-        'weixin-java-miniapp'
+        # 'aliyun-java-sdk-core',
+        # 'amqp-client',
+        # 'aws-java-sdk-core',
+        # 'fastjson',
+        # 'guava',
+        'hutool-core'
+        # 'joda-time',
+        # 'kubernetes-client',
+        # 'minio',
+        # 'weixin-java-miniapp'
     ]
 
     # 正则表达式和输出文件名的配对列表
     patterns_and_files = [
         (r"\((?:[^)]*,\s*)*(?:java\.lang\.Boolean|boolean)(?:\s*,[^)]*)*\)", "filter_boolean.txt"),
-        (r"\((?:[^)]*,\s*)*(?:java\.lang\.Integer|int)(?:\s*,[^)]*)*\)", "filter_int.txt")
+        (r"\((?:[^)]*,\s*)*(?:java\.lang\.Integer|int)(?:\s*,[^)]*)*\)", "filter_int.txt"),
+        (r"\((?:[^)]*,\s*)*(?:java\.lang\.Byte|byte)(?:\s*,[^)]*)*\)", "filter_byte.txt"),
+        (r"\([^\)]*-enum[^\)]*\)", "filter_enum.txt")
     ]
 
     for folder_name in folder_names:

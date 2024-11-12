@@ -22,6 +22,8 @@ list:
 #    - /Users/luca/dev/2025/mall-swarm/mall-monitor/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-portal/target/classes
     - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-1
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-2
     # newbee
 #    - /Users/luca/dev/2025/newbee-mall/target/classes
   scannedMybatisXmlDirs:
