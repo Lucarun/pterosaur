@@ -35,7 +35,7 @@ public class TPLDetector {
         Collection<SootClass> classSnapshot = new ArrayList<>(Scene.v().getApplicationClasses());
         classSnapshot.removeIf(sootClass ->
                 generalList.targetPackages.stream().anyMatch(targetPackage ->
-                        sootClass.getPackageName().startsWith(targetPackage)
+                        sootClass.getPackageName().startsWith(targetPackage) && sootClass.getName().endsWith("Test")
                 )
         );
         System.out.println("classSnapshot size is : " + classSnapshot.size());
