@@ -35,7 +35,7 @@ public class TPLDetector {
         Collection<SootClass> classSnapshot = new ArrayList<>(Scene.v().getApplicationClasses());
         classSnapshot.removeIf(sootClass ->
                 generalList.targetPackages.stream().anyMatch(targetPackage ->
-                        sootClass.getPackageName().startsWith(targetPackage) && sootClass.getName().endsWith("Test")
+                        sootClass.getPackageName().startsWith(targetPackage) && !sootClass.getName().endsWith("Test")
                 )
         );
         System.out.println("classSnapshot size is : " + classSnapshot.size());
@@ -75,7 +75,7 @@ public class TPLDetector {
                         InvokeExpr invokeExpr = stmt.getInvokeExpr();
                         SootMethod calledMethod = invokeExpr.getMethod();
 
-                        // 检测是否调用了第三方库方法
+                        // 获取方法所属类的包名
                         String packageName = calledMethod.getDeclaringClass().getPackageName();
                         if (isThirdPartyPackage(packageName) && isTargetPackage(packageName)) {
 
@@ -87,14 +87,29 @@ public class TPLDetector {
                                 if (paramType instanceof RefType) {
                                     SootClass paramClass = ((RefType) paramType).getSootClass();
 
-                                    // 判断该参数类型是否是枚举
-                                    if (paramClass.isEnum()) {
-                                        // 在输出中添加 `-enum`
-                                        calledMethodSignature = new StringBuilder(calledMethodSignature.toString()
-                                                .replace(paramClass.getName(), paramClass.getName() + "-enum"));
-                                        System.out.println("Method contains Enum: " + method.getSignature() +
-                                                " calls third-party method: " + calledMethodSignature);
+                                    // 创建一个标签变量，用于累积所有满足条件的标签
+                                    StringBuilder label = new StringBuilder(paramClass.getName());
+
+                                    if (!paramClass.getName().startsWith("java.")) { // 忽略 java 标准库类型
+                                        // 判断该参数类型是否是枚举
+                                        if (paramClass.isEnum() && !label.toString().contains("-Enum")) {
+                                            label.append("-Enum");
+                                        }
+                                        // 判断该参数类型是否是接口
+                                        if (paramClass.isInterface() && !label.toString().contains("-InterfaceClass")) {
+                                            label.append("-InterfaceClass");
+                                        }
+                                        // 判断该参数类型是否是超类
+                                        if (paramClass.hasSuperclass() && !label.toString().contains("-SuperClass")) {
+                                            label.append("-SuperClass");
+                                        }
                                     }
+
+                                    // 在输出中替换原始参数类型为带有标签的类型
+                                    calledMethodSignature = new StringBuilder(calledMethodSignature.toString()
+                                            .replace(paramClass.getName(), label.toString()));
+                                    System.out.println("Method: " + method.getSignature() +
+                                            " calls third-party method with tagged parameter: " + calledMethodSignature);
                                 }
                             }
 
@@ -103,6 +118,7 @@ public class TPLDetector {
                                     " calls third-party method: " + calledMethodSignature);
                             list.add(method.getSignature() + "--->" + calledMethodSignature);
                         }
+
                     }
                 }
             }

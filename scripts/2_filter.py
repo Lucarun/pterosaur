@@ -44,7 +44,9 @@ def process_multiple_folders(base_folder_path):
         (r"\((?:[^)]*,\s*)*(?:java\.lang\.Boolean|boolean)(?:\s*,[^)]*)*\)", "filter_boolean.txt"),
         (r"\((?:[^)]*,\s*)*(?:java\.lang\.Integer|int)(?:\s*,[^)]*)*\)", "filter_int.txt"),
         (r"\((?:[^)]*,\s*)*(?:java\.lang\.Byte|byte)(?:\s*,[^)]*)*\)", "filter_byte.txt"),
-        (r"\([^\)]*-enum[^\)]*\)", "filter_enum.txt")
+        (r"\([^\)]*-Enum[^\)]*\)", "filter_enum.txt"),
+        (r"\([^\)]*-InterfaceClass[^\)]*\)", "filter_interface_class.txt"),
+        (r"\([^\)]*-SuperClass[^\)]*\)", "filter_super_class.txt")
     ]
 
     for folder_name in folder_names:
