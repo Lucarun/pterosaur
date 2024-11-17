@@ -13,16 +13,24 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Enumeration;
+import java.util.concurrent.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.jar.JarOutputStream;
 
 public class AutoInvoker {
 
+
+    static ExecutorService executorService = Executors.newFixedThreadPool(10); // 限制线程池大小
+
     public static void main(String[] args) {
         String[] jarFilePaths = {
-                "/Users/luca/dev/2025/pterosaur/lib/rosefinch-0.0.1-SNAPSHOT.jar",
-                "/Users/luca/dev/2025/pterosaur/lib/rosefinch-0.0.1-SNAPSHOT-tests.jar",
+//                "/Users/luca/dev/2024/pangaea/rosefinch/target/rosefinch-0.0.1-SNAPSHOT.jar",
+//                "/Users/luca/dev/2024/pangaea/rosefinch/target/rosefinch-0.0.1-SNAPSHOT-tests.jar",
+//                "/Users/luca/dev/2025/pilot/hutool/hutool-core/target/hutool-core-5.8.33.jar",
+//                "/Users/luca/dev/2025/pilot/hutool/hutool-core/target/hutool-core-5.8.33-tests.jar"
+                "/Users/luca/dev/2025/pilot/fastjson/target/fastjson-1.2.84-SNAPSHOT.jar",
+                "/Users/luca/dev/2025/pilot/fastjson/target/fastjson-1.2.84-SNAPSHOT-tests.jar"
         };
 
         instrument(jarFilePaths);
@@ -55,7 +63,6 @@ public class AutoInvoker {
                     String name = entry.getName();
                     if (name.endsWith(".class")) {
                         String className = name.replace('/', '.').replace(".class", "");
-                        System.out.println("Processing class: " + className);
                         try {
                             CtClass ctClass = pool.get(className);
                             // 查找带有 @Test 注解的方法并修改其body
@@ -119,7 +126,7 @@ public class AutoInvoker {
             for (CtMethod ctMethod : ctClass.getDeclaredMethods()) {
                 // 如果方法有 @Test 注解，则修改方法体
                 if (ctMethod.hasAnnotation(Test.class)) {
-                    System.out.println("Found @Test method: " + ctMethod.getName());
+//                    System.out.println("Found @Test method: " + ctMethod.getName());
                     modifyMethod(ctMethod);
                 }
             }
@@ -151,15 +158,20 @@ public class AutoInvoker {
 
                 // 遍历所有参数，检查是否是接口类型
                 for (int i = 0; i < parameterTypes.length; i++) {
-                    if (parameterTypes[i].isInterface()) {
+                    String className = parameterTypes[i].getName();
+                    if (parameterTypes[i].isInterface() && !isBasicJavaClass(className)) {
                         // 生成打印语句：输出接口类型参数的具体实现类
-                        printCode.append("System.out.println(\"Parameter ")
-                                .append(i + 1)
-                                .append(" in method ")
-                                .append(m.getMethodName())
-                                .append(" is an interface. Actual implementation: \" + $")
-                                .append(i + 1)
-                                .append(".getClass().getName());\n");
+                        try {
+                            printCode.append("System.out.println(\"Parameter ")
+                                    .append(i + 1)
+                                    .append(" in method ")
+                                    .append(m.getMethod().getLongName())
+                                    .append(" is an interface. Actual implementation: \" + $")
+                                    .append(i + 1)
+                                    .append(".getClass().getName());\n");
+                        } catch (NotFoundException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
 
@@ -183,6 +195,17 @@ public class AutoInvoker {
                 }
             }
         });
+    }
+
+
+    // 判断是否是Java基础类
+    private static boolean isBasicJavaClass(String className) {
+        // 检查是否属于Java标准库的基础类
+        return className.startsWith("java.lang.") ||
+                className.startsWith("java.util.") ||
+                className.startsWith("java.io.") ||
+                className.startsWith("javax.") ||
+                className.startsWith("sun.");
     }
 
 
@@ -216,7 +239,6 @@ public class AutoInvoker {
                 String name = entry.getName();
                 if (name.endsWith(".class")) {
                     String className = name.replace('/', '.').replace(".class", "");
-                    System.out.println("className: " + className);
                     try {
                         // 使用类加载器加载类
                         if (className.endsWith("Test")){
@@ -234,28 +256,88 @@ public class AutoInvoker {
     }
 
     private static void executeTestMethods(Class<?> clazz) {
-        // 获取类中的所有方法
         Method[] methods = clazz.getDeclaredMethods();
-
         for (Method method : methods) {
-            // 设置方法可访问，即使它是 private 或 protected
+
             method.setAccessible(true);
-            // 获取方法上的所有注解
             Annotation[] annotations = method.getDeclaredAnnotations();
-            // 遍历所有注解
             for (Annotation annotation : annotations) {
-                // 检查注解是否是@Test
                 if (annotation instanceof Test) {
-                    System.out.println("Found test method: " + method.getName() + " in class " + clazz.getName());
+
+
+                    while (Thread.activeCount() > 300) {
+                        System.out.println("Too many active threads, sleep 10s...");
+                        try {
+                            Thread.sleep(10000);
+                            if (Thread.activeCount() > 300) {
+                                System.out.println("Too many active threads again, sleep");
+                                ThreadGroup group = Thread.currentThread().getThreadGroup();
+                                while (group.getParent() != null) {
+                                    group = group.getParent(); // 找到根线程组
+                                }
+                                Thread[] threads = new Thread[group.activeCount()];
+                                group.enumerate(threads); // 获取所有线程
+
+                                for (Thread thread : threads) {
+                                    if (thread != null && thread != Thread.currentThread()) {
+                                        System.out.println("Interrupting thread: " + thread.getName());
+                                        thread.interrupt(); // 尝试中断线程
+                                    }
+                                }
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+
+                    Future<?> future = executorService.submit(() -> {
+                        try {
+                            method.invoke(clazz.getDeclaredConstructor().newInstance());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
                     try {
-                        method.invoke(clazz.getDeclaredConstructor().newInstance()); // 创建实例并执行方法
-                        break;
-                    }catch (Exception e){
+                        future.get(10, TimeUnit.SECONDS); // 等待10秒超时
+                    } catch (TimeoutException e) {
+                        System.out.println("Timeout! Task cancelled.");
+                        future.cancel(true); // 超时后取消任务
+                    } catch (Exception e) {
                         e.printStackTrace();
-                        break;
+                        future.cancel(true);
                     }
                 }
             }
         }
+    }
+
+
+    private static void interruptThreadGroup(ThreadGroup group) {
+        Thread[] threads = new Thread[group.activeCount()];
+        group.enumerate(threads);
+        for (Thread thread : threads) {
+            thread.interrupt(); // 中断每个线程
+        }
+    }
+
+
+    // 获取方法签名，模拟Soot的格式
+    private static String getSootMethodSignature(Method method) {
+        // Soot-style format: <fully.qualified.ClassName: returnType methodName(paramTypes)>
+        String className = method.getDeclaringClass().getName(); // Fully qualified class name
+        String returnType = method.getReturnType().getName(); // Return type
+        String methodName = method.getName(); // Method name
+
+        // Get parameter types and format them similarly to Soot's way
+        Class<?>[] parameterTypes = method.getParameterTypes();
+        StringBuilder paramTypes = new StringBuilder();
+        for (Class<?> paramType : parameterTypes) {
+            // Format each parameter type similar to Soot's style (fully qualified name with a trailing ';')
+            paramTypes.append(paramType.getName().replace('.', '/') + ";");
+        }
+
+        return String.format("<%s: %s %s(%s)>", className, returnType, methodName, paramTypes.toString());
     }
 }
