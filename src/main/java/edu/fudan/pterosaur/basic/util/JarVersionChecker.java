@@ -22,9 +22,9 @@ public class JarVersionChecker {
                             return true; // 找到符合条件的文件，直接返回 true
                         }
                         checkCount++; // 增加检查计数
-                        if (checkCount >= 5) {
-                            return false; // 已经检查了5个文件且都不符合条件，返回 false
-                        }
+//                        if (checkCount >= 100) {
+//                            return false; // 已经检查了5个文件且都不符合条件，返回 false
+//                        }
                     }
                 }
             }
@@ -40,6 +40,7 @@ public class JarVersionChecker {
         DataInputStream dataStream = new DataInputStream(classFileStream);
         dataStream.skipBytes(6); // Skip the first 6 bytes to reach the major version
         int majorVersion = dataStream.readUnsignedShort();
+        System.out.println("majorVersion : " + majorVersion);
         return majorVersion >= javaVersion; // 65 indicates Java 21
     }
 }

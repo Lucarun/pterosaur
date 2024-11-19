@@ -21,22 +21,39 @@ list:
 #    - /Users/luca/dev/2025/mall-swarm/mall-mbg/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-monitor/target/classes
 #    - /Users/luca/dev/2025/mall-swarm/mall-portal/target/classes
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-1
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-2
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/test
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-1
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-2
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/test
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/fastjson/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/aliyun-java-sdk-core/downstream
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream
     # newbee
 #    - /Users/luca/dev/2025/newbee-mall/target/classes
   scannedMybatisXmlDirs:
     - /Users/luca/dev/research/micro_service_seclab-main/src/main/resources/mappers
   tplPackages:
-    - org.elasticsearch
-    - com.rabbitmq
-    - org.apache
+#    - org.elasticsearch
+#    - com.rabbitmq
+#    - org.apache
+    - com.example
   appPackages:
     - cn.hutool.http
   targetPackages:
-    - cn.hutool.core
+#    - cn.hutool.core
+#    - com.alibaba.fastjson
+#    - com.aliyuncs.auth
+#    - com.aliyuncs.endpoint
+#    - com.aliyuncs.exceptions
+#    - com.aliyuncs.http
+#    - com.aliyuncs.policy
+#    - com.aliyuncs.profile
+#    - com.aliyuncs.reader
+#    - com.aliyuncs.regions
+#    - com.aliyuncs.transform
+#    - com.aliyuncs.unmarshaller
+#    - com.aliyuncs.utils
+    - com.rabbitmq
 logging:
   config: classpath:log4j2.yml
 
