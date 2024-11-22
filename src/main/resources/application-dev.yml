@@ -27,7 +27,12 @@ list:
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/test
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/fastjson/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/aliyun-java-sdk-core/downstream
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/aws-java-sdk-core/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/guava/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/kubernetes-client/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/minio/downstream
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/weixin-java-miniapp/downstream
     # newbee
 #    - /Users/luca/dev/2025/newbee-mall/target/classes
   scannedMybatisXmlDirs:
@@ -53,7 +58,13 @@ list:
 #    - com.aliyuncs.transform
 #    - com.aliyuncs.unmarshaller
 #    - com.aliyuncs.utils
-    - com.rabbitmq
+#    - com.rabbitmq
+#    - com.amazonaws
+#    - com.google.common
+#    - com.google.thirdparty
+#    - io.fabric8.kubernetes.client
+#    - io.minio
+    - cn.binarywang.wx.miniapp
 logging:
   config: classpath:log4j2.yml
 
