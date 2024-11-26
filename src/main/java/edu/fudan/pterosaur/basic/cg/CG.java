@@ -46,6 +46,8 @@ public class CG {
     }
 
     public CG(List<SootMethod> entryPoint){
+        // 开始时间
+        long startTime = System.nanoTime();
         this.entryPoints =entryPoint;
         System.out.println("constructCG");
         this.callGraph=constructCG();
@@ -56,6 +58,12 @@ public class CG {
         }else {
             this.transitiveTargets=new TransitiveTargets(callGraph,filter);
         }
+        // 结束时间
+        long endTime = System.nanoTime();
+        // 计算耗时
+        long duration = endTime - startTime;
+        // 打印耗时（以毫秒为单位）
+        System.out.println("Creating CG took " + (duration / 1_000_000_000) + " s");
     }
 
     public CG(SootMethod entryPoint){

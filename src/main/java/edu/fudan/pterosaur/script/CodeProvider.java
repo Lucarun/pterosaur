@@ -23,9 +23,11 @@ public class CodeProvider {
     public static void main(String[] args) {
 
         String filePath = "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/output/tpl_sort.txt";
-        String inputClassPath = "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream";
 
-        SootInit.setSoot_inputClass(Collections.singletonList(inputClassPath), true);
+        String[] path = new String[]{"/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/amqp-client-5.22.0.jar",
+        "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/vertx-rabbitmq-client-4.5.10.jar"};
+
+        SootInit.setSoot_inputClass(List.of(path));
 
 
         // 读取签名并处理
@@ -36,12 +38,17 @@ public class CodeProvider {
             List<String> valueList = entry.getValue();
             // 打印 key
             System.out.println("Key: " + key);
+            SootMethod calleeMethod = Scene.v().getMethod(key);
+
+
             // 遍历 list，打印其中的每一个 value
             List<SootMethod> entries = new ArrayList<>();
             for (String value : valueList) {
                 SootMethod targetMethod = Scene.v().getMethod(value);
                 if (targetMethod != null) {
                     entries.add(targetMethod);
+                    // get the first ele to test
+                    break;
                 }
             }
 
@@ -50,25 +57,48 @@ public class CodeProvider {
 
             for (String value : valueList) {
                 System.out.println("Value: " + value);
-                Map<SootMethod, List<SootMethod>> methodCallChains = new HashMap<>();
-                extracted(value, methodCallChains);
-                // 打印分析结果
-                methodCallChains.forEach((method, calls) -> {
-                    System.out.println("Method: " + method.getSignature());
-                    System.out.println("Calls:");
-                    calls.forEach(called -> System.out.println("\t" + called.getSignature()));
-                });
 
+                extracted(value, calleeMethod);
+                // get the first ele to test
+                break;
             }
         }
     }
 
-    private static void extracted(String sig, Map<SootMethod, List<SootMethod>> methodCallChains) {
-        SootMethod targetMethod = Scene.v().getMethod(sig);
-        // 生成调用图
-        //CHATransformer.v().transform();
-        // 存储方法体的结果
-        analyzeMethod(targetMethod, 3, methodCallChains);
+    private static void extracted(String sig, SootMethod calleeMethod) {
+        try{
+            SootMethod targetMethod = Scene.v().getMethod(sig);
+
+            CallGraph cg = Scene.v().getCallGraph();
+            Iterator<Edge> edges = cg.edgesOutOf(targetMethod);
+
+            List<SootMethod> callees = new ArrayList<>();
+            while (edges.hasNext()) {
+                SootMethod callee = edges.next().getTgt().method();
+                System.out.println("callee in first dep" + callee);
+                if (calleeMethod.getSignature().equals(callee.getSignature())){
+                    callees.add(callee);
+                }
+            }
+
+            for (SootMethod callee : callees){
+                // 生成调用图
+                //CHATransformer.v().transform();
+                // 存储方法体的结果
+                List<SootMethod> methodCallChains = new LinkedList<>();
+                methodCallChains.add(callee);
+                analyzeMethod(callee, 2, methodCallChains);
+                // 打印分析结果
+                methodCallChains.forEach(calls -> {
+
+                });
+
+                analyzeAndWriteToFile(methodCallChains, "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt" );
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -78,18 +108,14 @@ public class CodeProvider {
      * @param depth            剩余递归深度
      * @param methodCallChains 调用链数据结构
      */
-    private static void analyzeMethod(SootMethod method, int depth, Map<SootMethod, List<SootMethod>> methodCallChains) {
+    private static void analyzeMethod(SootMethod method, int depth, List<SootMethod> methodCallChains) {
         if (depth <= 0 || method == null || !method.hasActiveBody()) return;
-
-        List<SootMethod> calledMethods = new ArrayList<>();
-        methodCallChains.put(method, calledMethods);
-
         CallGraph cg = Scene.v().getCallGraph();
         Iterator<Edge> edges = cg.edgesOutOf(method);
 
         while (edges.hasNext()) {
             SootMethod callee = edges.next().getTgt().method();
-            calledMethods.add(callee);
+            methodCallChains.add(callee);
             analyzeMethod(callee, depth - 1, methodCallChains);
         }
     }
@@ -162,6 +188,49 @@ public class CodeProvider {
         Scene.v().releasePointsToAnalysis();
         Scene.v().releaseReachableMethods();
         G.v().resetSpark();
+    }
+
+    public static void analyzeAndWriteToFile(List<SootMethod> callees, String outputFilePath) throws IOException {
+        // 创建 BufferedWriter 来写文件
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, false))) {
+            // 1. 写入第一行：Method to be analyzed: $methodName
+            if (callees.isEmpty()) {
+                return;
+            }
+            SootMethod firstMethod = callees.get(0);
+            writer.write("Method to be analyzed: " + firstMethod.getSignature());
+            writer.newLine();
+
+            // 2. 分析每个方法并写入文件
+            for (SootMethod callee : callees) {
+                // 获取方法签名和方法体（body）
+                String methodSignature = callee.getSignature();
+                String methodBody = getMethodBody(callee);
+
+                // 3. 写入方法签名
+                writer.write("Method: " + methodSignature);
+                writer.newLine();
+
+                // 4. 写入方法体
+                writer.write(methodBody);
+                writer.newLine();
+
+                // 加个分隔符，方便区分不同方法
+                writer.write("-----------");
+                writer.newLine();
+            }
+        }
+    }
+
+    // 解析方法体（获取具体的 body）
+    public static String getMethodBody(SootMethod method) {
+        // 获取方法的 body，若为抽象方法则返回"Abstract method"
+        if (method.hasActiveBody()) {
+            Body body = method.getActiveBody();
+            return body.toString();  // 返回方法体的字符串表示
+        } else {
+            return "Abstract method"; // 对于没有实现的接口方法或者抽象方法，返回提示
+        }
     }
 
 }
