@@ -20,20 +20,28 @@ import java.util.*;
  */
 public class CodeProvider {
 
+    public static String filePath = "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/output/tpl_sort.txt";
+
+    public static String[] classPath = new String[]{"/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/amqp-client-5.22.0.jar",
+            "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/vertx-rabbitmq-client-4.5.10.jar"};
+    public static String outputPath = "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt";
+    public static boolean checkOne = true;
+
     public static void main(String[] args) {
 
-        String filePath = "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/output/tpl_sort.txt";
+        if (args.length == 3){
+            filePath = args[0];
+            classPath = args[1].split(",");
+            outputPath = args[2];
+        }
 
-        String[] path = new String[]{"/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/amqp-client-5.22.0.jar",
-        "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/vertx-rabbitmq-client-4.5.10.jar"};
-
-        SootInit.setSoot_inputClass(List.of(path), true);
-
+        SootInit.setSoot_inputClass(List.of(classPath), true);
 
         // 读取签名并处理
         Map<String, List<String>> map = SignatureProcessor.processSignatures(filePath);
         // 遍历 map 按照插入顺序
         for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+
             String key = entry.getKey();
             List<String> valueList = entry.getValue();
             // 打印 key
@@ -54,12 +62,19 @@ public class CodeProvider {
                 }
             }
 
-            for (SootMethod sootMethod : entries){
-                CG cg = new CG(Collections.singletonList(sootMethod));
-                System.out.println("cg size : " + cg.callGraph.size());
-                if(cg.callGraph.size() > 0){
-                    break;
+            if (checkOne){
+                System.out.println("only check one entry");
+                for (SootMethod sootMethod : entries){
+                    CG cg = new CG(Collections.singletonList(sootMethod));
+                    System.out.println("cg size : " + cg.callGraph.size());
+                    if(cg.callGraph.size() > 0){
+                        break;
+                    }
                 }
+            }else{
+                System.out.println("only all ");
+                CG cg = new CG(entries);
+                System.out.println("cg size : " + cg.callGraph.size());
             }
 
             for (SootMethod sootMethod : entries) {
@@ -80,6 +95,7 @@ public class CodeProvider {
                 System.out.println("callee in first dep" + callee);
                 if (calleeMethod.getSignature().equals(callee.getSignature())){
                     cMethod = calleeMethod;
+                    break;
                 }
             }
 
@@ -91,7 +107,7 @@ public class CodeProvider {
                 methodCallChains.add(cMethod);
                 analyzeMethod(cMethod, 2, methodCallChains);
 
-                analyzeAndWriteToFile(methodCallChains, "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt", targetMethod, cMethod);
+                analyzeAndWriteToFile(methodCallChains, outputPath, targetMethod, cMethod);
             }
         }catch (Exception e){
             e.printStackTrace();
