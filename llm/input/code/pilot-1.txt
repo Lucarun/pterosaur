@@ -1,8 +1,0 @@
-package com.rabbitmq.client;
-
-public class Envelope {
-    public long getDeliveryTag() {
-        return this._deliveryTag;
-    }
-
-}
