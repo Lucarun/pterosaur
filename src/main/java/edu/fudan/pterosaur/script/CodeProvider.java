@@ -4,8 +4,6 @@ import edu.fudan.pterosaur.basic.cg.CG;
 import edu.fudan.pterosaur.basic.common.SootInit;
 import edu.fudan.pterosaur.basic.util.SignatureProcessor;
 import soot.*;
-import soot.jimple.spark.SparkTransformer;
-import soot.jimple.toolkits.callgraph.CHATransformer;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.options.Options;
@@ -27,12 +25,18 @@ public class CodeProvider {
     public static String outputPath = "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt";
     public static boolean checkOne = true;
 
+    public static int dep = 2;
+
     public static void main(String[] args) {
 
-        if (args.length == 3){
+        if (args.length == 5){
             filePath = args[0];
             classPath = args[1].split(",");
             outputPath = args[2];
+            checkOne = Boolean.parseBoolean(args[3]);
+            dep = Integer.parseInt(args[4]);
+            // 打印所有参数
+            System.out.println("Arguments: " + Arrays.toString(args));
         }
 
         SootInit.setSoot_inputClass(List.of(classPath), true);
@@ -45,7 +49,7 @@ public class CodeProvider {
             String key = entry.getKey();
             List<String> valueList = entry.getValue();
             // 打印 key
-            System.out.println("Key: " + key);
+            System.out.println("API in TPL : " + key);
             SootMethod calleeMethod = Scene.v().getMethod(key);
 
 
@@ -62,22 +66,18 @@ public class CodeProvider {
                 }
             }
 
-            if (checkOne){
-                System.out.println("only check one entry");
-                for (SootMethod sootMethod : entries){
-                    CG cg = new CG(Collections.singletonList(sootMethod));
-                    System.out.println("cg size : " + cg.callGraph.size());
-                    if(cg.callGraph.size() > 0){
-                        break;
-                    }
-                }
-            }else{
-                System.out.println("only all ");
+            if (!checkOne){
+                System.out.println("check all entries : " + entries.size());
                 CG cg = new CG(entries);
                 System.out.println("cg size : " + cg.callGraph.size());
             }
 
             for (SootMethod sootMethod : entries) {
+                if (checkOne){
+                    System.out.println("only check one entry");
+                    CG cg = new CG(Collections.singletonList(sootMethod));
+                    System.out.println("cg size : " + cg.callGraph.size());
+                }
                 extracted(sootMethod, calleeMethod);
             }
         }
@@ -105,7 +105,7 @@ public class CodeProvider {
                 // 存储方法体的结果
                 List<SootMethod> methodCallChains = new LinkedList<>();
                 methodCallChains.add(cMethod);
-                analyzeMethod(cMethod, 2, methodCallChains);
+                analyzeMethod(cMethod, dep, methodCallChains);
 
                 analyzeAndWriteToFile(methodCallChains, outputPath, targetMethod, cMethod);
             }
