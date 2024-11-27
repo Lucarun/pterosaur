@@ -1,4 +1,0 @@
-<com.google.common.base.Strings: java.lang.String repeat(java.lang.String,int)><---<com.google.inject.internal.PackageNameCompressor: java.lang.String buildClassNameLegend(java.util.Map)>
-<com.google.common.base.Strings: java.lang.String repeat(java.lang.String,int)><---<com.google.inject.internal.SourceFormatter: void <clinit>()>
-<com.google.common.collect.Sets: java.util.HashSet newHashSetWithExpectedSize(int)><---<com.android.build.gradle.BaseExtension: void setDefaultConfigValues()>
-<com.google.common.base.Preconditions: void checkArgument(boolean,java.lang.String,int)><---<io.grpc.stub.ServerCallStreamObserver: void setOnReadyThreshold(int)>
