@@ -1,3 +1,4 @@
+import copy
 import json
 
 from prettytable import PrettyTable
@@ -8,6 +9,7 @@ import itertools
 import wandb
 from tenacity import retry, stop_after_attempt, wait_exponential
 import os
+import parser
 
 api_key = "sk-yOWN4OQzmCgLBemn8e6355340b9e4b438c13632aC7D6Ad37"  # enter your OpenAI API key here
 EVAL_MODEL = "gpt-4o"
@@ -29,7 +31,7 @@ client = OpenAI(
 )
 
 prompts = [{
-    "role": "user",
+    "role": "system",
     "content": """
 You are a professional program analysis aid to summarize what the target method is doing and
 what kind of data flow there in relates to the target method. """},
@@ -365,41 +367,48 @@ def get_code_from_file(file_path):
         return None
 
 
-def generate(output_file):
+def generate():
+    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-amq.txt'
+    methods = parser.parse_methods_by_file("/Users/luca/dev/2025/pterosaur/llm/input/code/pilot-8.txt")
 
-    path = "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt"
-    analysis_code = get_code_from_file(path)
-    # 拼接analysis_code到prompts数组中第二个元素的content后面
-    prompts[1]["content"] += analysis_code
+    # 初始化原始prompts
+    original_prompts = prompts
 
-    conversation = prompts
-    # 调用GPT模型s
-    response = client.chat.completions.create(
-        model=EVAL_MODEL,
-        messages=conversation,
-        max_tokens=EVAL_MODEL_MAX_TOKENS,  # 限制返回值大小到一两句话长度
-        temperature=EVAL_MODEL_TEMPERATURE  # 使生成的文本更加简洁和准确
-    ).choices[0].message.content
+    # 遍历methods列表
+    for analysis_code in methods:
+        # 深拷贝prompts，保证每次循环都是独立的
+        conversation = copy.deepcopy(original_prompts)
 
-    # 保存当前对话到文件
-    conversation += [
-        {
-            "role": "assistant",
-            "content": response
-        }
-    ]
-    save_conversation_to_file(output_file, conversation)
+        # 拼接analysis_code到prompts数组中第二个元素的content后面
+        conversation[1]["content"] += analysis_code
 
-    return response
+        # 调用GPT模型
+        response = client.chat.completions.create(
+            model=EVAL_MODEL,
+            messages=conversation,
+            max_tokens=EVAL_MODEL_MAX_TOKENS,  # 限制返回值大小到一两句话长度
+            temperature=EVAL_MODEL_TEMPERATURE  # 使生成的文本更加简洁和准确
+        ).choices[0].message.content
+
+        # 在控制台输出返回值
+        print(f"Response from GPT:\n{response}\n")  # 打印返回值
+
+        # 保存当前对话到文件
+        conversation.append(
+            {
+                "role": "assistant",
+                "content": response
+            }
+        )
+        save_conversation_to_file(output_file, conversation)
 
 
 def save_conversation_to_file(filename, conversation):
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(filename, 'a', encoding='utf-8') as f:  # 使用 'a' 模式
         for entry in conversation:
             f.write(f"=== {entry['role']} ===\n")
             f.write(f"{entry['content']}\n")
 
 
 if __name__ == "__main__":
-    filename = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-amq.txt'
-    generate(filename)
+    generate()

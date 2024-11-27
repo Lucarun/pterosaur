@@ -22,7 +22,7 @@ public class CodeProvider {
 
     public static String[] classPath = new String[]{"/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/amqp-client-5.22.0.jar",
             "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/vertx-rabbitmq-client-4.5.10.jar"};
-    public static String outputPath = "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt";
+    public static String outputPath = "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot-8.txt";
     public static boolean checkOne = true;
 
     public static int dep = 2;
@@ -50,8 +50,16 @@ public class CodeProvider {
             List<String> valueList = entry.getValue();
             // 打印 key
             System.out.println("API in TPL : " + key);
-            SootMethod calleeMethod = Scene.v().getMethod(key);
 
+
+            SootMethod calleeMethod;
+            try {
+                calleeMethod = Scene.v().getMethod(key);
+            }catch (Exception e){
+                System.out.println("calleeMethod not found : " + key);
+                e.printStackTrace();
+                continue;
+            }
 
             // 遍历 list，打印其中的每一个 value
             List<SootMethod> entries = new ArrayList<>();
