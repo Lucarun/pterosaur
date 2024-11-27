@@ -27,7 +27,7 @@ public class CodeProvider {
         String[] path = new String[]{"/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/amqp-client-5.22.0.jar",
         "/Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream/vertx-rabbitmq-client-4.5.10.jar"};
 
-        SootInit.setSoot_inputClass(List.of(path));
+        SootInit.setSoot_inputClass(List.of(path), true);
 
 
         // 读取签名并处理
@@ -44,56 +44,54 @@ public class CodeProvider {
             // 遍历 list，打印其中的每一个 value
             List<SootMethod> entries = new ArrayList<>();
             for (String value : valueList) {
-                SootMethod targetMethod = Scene.v().getMethod(value);
-                if (targetMethod != null) {
-                    entries.add(targetMethod);
-                    // get the first ele to test
+                try{
+                    SootMethod targetMethod = Scene.v().getMethod(value);
+                    if (targetMethod != null) {
+                        entries.add(targetMethod);
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+            for (SootMethod sootMethod : entries){
+                CG cg = new CG(Collections.singletonList(sootMethod));
+                System.out.println("cg size : " + cg.callGraph.size());
+                if(cg.callGraph.size() > 0){
                     break;
                 }
             }
 
-            CG cg = new CG(entries);
-            System.out.println("cg size : " + cg.callGraph.size());
-
-            for (String value : valueList) {
-                System.out.println("Value: " + value);
-
-                extracted(value, calleeMethod);
-                // get the first ele to test
-                break;
+            for (SootMethod sootMethod : entries) {
+                extracted(sootMethod, calleeMethod);
             }
         }
     }
 
-    private static void extracted(String sig, SootMethod calleeMethod) {
+    private static void extracted(SootMethod targetMethod, SootMethod calleeMethod) {
         try{
-            SootMethod targetMethod = Scene.v().getMethod(sig);
-
             CallGraph cg = Scene.v().getCallGraph();
             Iterator<Edge> edges = cg.edgesOutOf(targetMethod);
 
-            List<SootMethod> callees = new ArrayList<>();
+            SootMethod cMethod = null;
+
             while (edges.hasNext()) {
                 SootMethod callee = edges.next().getTgt().method();
                 System.out.println("callee in first dep" + callee);
                 if (calleeMethod.getSignature().equals(callee.getSignature())){
-                    callees.add(callee);
+                    cMethod = calleeMethod;
                 }
             }
 
-            for (SootMethod callee : callees){
+            if (cMethod != null){
                 // 生成调用图
                 //CHATransformer.v().transform();
                 // 存储方法体的结果
                 List<SootMethod> methodCallChains = new LinkedList<>();
-                methodCallChains.add(callee);
-                analyzeMethod(callee, 2, methodCallChains);
-                // 打印分析结果
-                methodCallChains.forEach(calls -> {
+                methodCallChains.add(cMethod);
+                analyzeMethod(cMethod, 2, methodCallChains);
 
-                });
-
-                analyzeAndWriteToFile(methodCallChains, "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt" );
+                analyzeAndWriteToFile(methodCallChains, "/Users/luca/dev/2025/pterosaur/llm/input/code/pilot.txt", targetMethod, cMethod);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -115,8 +113,10 @@ public class CodeProvider {
 
         while (edges.hasNext()) {
             SootMethod callee = edges.next().getTgt().method();
-            methodCallChains.add(callee);
-            analyzeMethod(callee, depth - 1, methodCallChains);
+            if (!callee.getSignature().contains("java.") && !callee.getSignature().contains("javax.")){
+                methodCallChains.add(callee);
+                analyzeMethod(callee, depth - 1, methodCallChains);
+            }
         }
     }
 
@@ -190,15 +190,22 @@ public class CodeProvider {
         G.v().resetSpark();
     }
 
-    public static void analyzeAndWriteToFile(List<SootMethod> callees, String outputFilePath) throws IOException {
+    public static void analyzeAndWriteToFile(List<SootMethod> callees, String outputFilePath, SootMethod targetMethod, SootMethod cMethod) throws IOException {
         // 创建 BufferedWriter 来写文件
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, false))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath, true))) {
             // 1. 写入第一行：Method to be analyzed: $methodName
             if (callees.isEmpty()) {
                 return;
             }
             SootMethod firstMethod = callees.get(0);
             writer.write("Method to be analyzed: " + firstMethod.getSignature());
+            writer.newLine();
+            writer.write("Related methods: " + callees.size());
+            writer.newLine();
+            writer.write("caller is : " + targetMethod.getSignature());
+            writer.newLine();
+            writer.write("callee is : " + cMethod.getSignature());
+            writer.newLine();
             writer.newLine();
 
             // 2. 分析每个方法并写入文件
@@ -214,11 +221,11 @@ public class CodeProvider {
                 // 4. 写入方法体
                 writer.write(methodBody);
                 writer.newLine();
-
-                // 加个分隔符，方便区分不同方法
-                writer.write("-----------");
-                writer.newLine();
             }
+
+            // 加个分隔符，方便区分不同方法
+            writer.write("-----------");
+            writer.newLine();
         }
     }
 

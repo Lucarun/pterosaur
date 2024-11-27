@@ -1,4 +1,3 @@
-<com.rabbitmq.client.ConnectionFactory: void setUsername(java.lang.String)><---<io.vertx.rabbitmq.impl.RabbitMQClientImpl: com.rabbitmq.client.Connection newConnection(io.vertx.core.Vertx,io.vertx.rabbitmq.RabbitMQOptions)>
 <com.rabbitmq.client.ShutdownNotifier: boolean isOpen()><---<io.vertx.rabbitmq.impl.RabbitMQClientImpl: boolean isConnected()>
 <com.rabbitmq.client.ShutdownNotifier: boolean isOpen()><---<io.vertx.rabbitmq.impl.RabbitMQClientImpl: boolean isOpenChannel()>
 <com.rabbitmq.client.ShutdownNotifier: boolean isOpen()><---<io.vertx.rabbitmq.impl.RabbitMQClientImpl: void restartConnect(int,io.vertx.core.Handler)>
