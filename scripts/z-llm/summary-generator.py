@@ -371,36 +371,58 @@ def generate():
     output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-amq.txt'
     methods = parser.parse_methods_by_file("/Users/luca/dev/2025/pterosaur/llm/input/code/pilot-8.txt")
 
-    # 初始化原始prompts
+    # 初始化原始 prompts
     original_prompts = prompts
 
-    # 遍历methods列表
-    for analysis_code in methods:
-        # 深拷贝prompts，保证每次循环都是独立的
-        conversation = copy.deepcopy(original_prompts)
+    # 统计变量
+    total_methods = len(methods)  # 总方法数
+    processed_count = 0          # 成功处理的计数
+    error_count = 0              # 异常发生的计数
 
-        # 拼接analysis_code到prompts数组中第二个元素的content后面
-        conversation[1]["content"] += analysis_code
+    # 遍历 methods 列表
+    for index, analysis_code in enumerate(methods, start=1):  # 添加索引从 1 开始
+        try:
+            # 深拷贝 prompts，确保每次循环独立
+            conversation = copy.deepcopy(original_prompts)
 
-        # 调用GPT模型
-        response = client.chat.completions.create(
-            model=EVAL_MODEL,
-            messages=conversation,
-            max_tokens=EVAL_MODEL_MAX_TOKENS,  # 限制返回值大小到一两句话长度
-            temperature=EVAL_MODEL_TEMPERATURE  # 使生成的文本更加简洁和准确
-        ).choices[0].message.content
+            # 拼接 analysis_code 到 prompts 的第二个元素的 content 后面
+            conversation[1]["content"] += analysis_code
 
-        # 在控制台输出返回值
-        print(f"Response from GPT:\n{response}\n")  # 打印返回值
+            # 调用 GPT 模型
+            response = client.chat.completions.create(
+                model=EVAL_MODEL,
+                messages=conversation,
+                max_tokens=EVAL_MODEL_MAX_TOKENS,  # 限制返回值大小
+                temperature=EVAL_MODEL_TEMPERATURE  # 提高准确性和简洁性
+            ).choices[0].message.content
 
-        # 保存当前对话到文件
-        conversation.append(
-            {
-                "role": "assistant",
-                "content": response
-            }
-        )
-        save_conversation_to_file(output_file, conversation)
+            # 在控制台输出返回值
+            print(f"Processing method {index}/{total_methods}")
+            print(f"Response from GPT:\n{response}\n")
+
+            # 保存当前对话到文件
+            conversation.append(
+                {
+                    "role": "assistant",
+                    "content": response
+                }
+            )
+
+            save_conversation_to_file(output_file, conversation)
+
+            # 统计已处理数
+            processed_count += 1
+
+        except Exception as e:
+            # 捕获异常并输出
+            print(f"Error processing method {index}/{total_methods}: {e}")
+
+            # 统计错误次数
+            error_count += 1
+
+        # 输出当前统计信息
+        print(f"Progress: {processed_count}/{total_methods} methods processed successfully.")
+        print(f"Errors encountered so far: {error_count}\n")
 
 
 def save_conversation_to_file(filename, conversation):

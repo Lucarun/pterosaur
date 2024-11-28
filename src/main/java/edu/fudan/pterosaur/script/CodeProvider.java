@@ -43,6 +43,15 @@ public class CodeProvider {
 
         // 读取签名并处理
         Map<String, List<String>> map = SignatureProcessor.processSignatures(filePath);
+
+
+        analysisOneByOne(map);
+    }
+
+    private static void analysisOneByOne(Map<String, List<String>> map) {
+
+        System.out.println("****** AnalysisOneByOne ******");
+
         // 遍历 map 按照插入顺序
         for (Map.Entry<String, List<String>> entry : map.entrySet()) {
 
@@ -137,7 +146,7 @@ public class CodeProvider {
 
         while (edges.hasNext()) {
             SootMethod callee = edges.next().getTgt().method();
-            if (!callee.getSignature().contains("java.") && !callee.getSignature().contains("javax.")){
+            if (!callee.getSignature().startsWith("<java.") && !callee.getSignature().startsWith("<javax.")){
                 methodCallChains.add(callee);
                 analyzeMethod(callee, depth - 1, methodCallChains);
             }
