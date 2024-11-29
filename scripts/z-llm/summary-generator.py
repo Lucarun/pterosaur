@@ -20,7 +20,7 @@ use_portkey = False  # set to True if you want to use Portkey to log all the pro
 # .ai/
 
 EVAL_MODEL_TEMPERATURE = 0.2
-EVAL_MODEL_MAX_TOKENS = 1000
+EVAL_MODEL_MAX_TOKENS = 1500
 
 from openai import OpenAI
 
@@ -89,49 +89,12 @@ Here is a few examples，and the analysis result will provide a summary in the f
 Data Flow Summary and conditions should only contains the flow about param, field of the param, this, filed of this, ret, 
 field of the ret which should not include local variables in the method. （Please pay attention to this rule!!!）.
 
-There are several predetermined conditions here.
-(1)null checks : CT1
-e.g. 
-if (p1 != null){ p2 = p1 }
-
-(2)value comparisons : CT2
-e.g. 
-if (p1.length > 0){ p2 = p1 }
-e.g. 
-if (p1.flag){ p2 = p1 }
-e.g. 
-if (p1 == 10){ p2 = p1 }
-
-(3)collection membership : CT3
-As long as it involves the judgment of collection elements, it can be considered as this type uniformly. 
-The highest priority, even if it can be defined as CT1 or CT2
-e.g. [p1 is a collection, p1[3] means the element with index 3]
-if (p1[3].contains("pwd")){ p2 = p1 }
-
-(4)class hierarchy : CT5
-e.g. 
-if (p1 instanceof Foo){ p2 = p1 }
-
-(5)catch exception : CT6
-e.g. 
-try{
-    p1.operateThrowException();
-}catch(Exception ex){
-    p2 = p1
-}
-(6)others : OCT
-unknown condition
-(7)No condition : NOC
-e.g.
-void call(String p1, String p2){
-   p2 = p1;
-}
-
+Also,InArguments and OutArguments will only contain one element. If there are multiple elements, please create a PropagationRule to represent them separately!!!
 
 
 Example 1 :
 
-[Code to be analyzed]:
+Method to be analyzed: <com.test.A: java.lang.String call(java.lang.String,com.test.Foo,int)>
 
 package com.test;
 public class A{
@@ -146,7 +109,11 @@ public class A{
             }
         }
         assignValueMethodB(tmp2, b); // This line involves a dataflow from p1(tmp2) to p2(b).content
-        this.flag.score = c;
+        if (c != 0){
+            this.flag.score = c;
+        }else{
+            this.flag.score = 1000;
+        }
         return finalStr
     }
     class Flag{
@@ -243,7 +210,7 @@ public Foo{
                 <ParamType>int</ParamType>
             </Parameters>
             <HasPropagation>true</HasPropagation>
-            <Condition>NOC</Condition>
+            <Condition> p3!=0 </Condition> # p3 means the third parm
             <InArguments>2</InArguments>
             <OutArguments>this.flag.score</OutArguments>
             <Comment>
@@ -285,7 +252,7 @@ public Foo{
 
 Example 2 :
 
-[Code to be analyzed]: <com.test:A void call(java.lang.String)>
+Method to be analyzed: <com.test:A void call(java.lang.String)>
 
 package com.test;
 public class A{
@@ -321,16 +288,10 @@ public class A{
             </Comment>
 </PropagationRule>
 
-
-
-Now the final question, tell me the summary of this method. 
+Now the final question, tell me the summary of this method.
 (1)Please provide the analysis results strictly in this XML format according to the example. 
 (2)Don't forget to merge the result (p1-->a-->b--->p2 should be p1 --> p2)
 (3)Please think step by step and provide the detailed analysis results for each step. 
-
-
-
-
 
 """
      }]
@@ -367,9 +328,12 @@ def get_code_from_file(file_path):
         return None
 
 
-def generate():
-    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-amq.txt'
-    methods = parser.parse_methods_by_file("/Users/luca/dev/2025/pterosaur/llm/input/code/pilot-8.txt")
+def generate(output_file, code_file, batch_size=1):
+    """
+    批量处理 methods 列表，将指定数量的 analysis_code 拼接到 prompts 中进行 GPT 调用。
+    :param batch_size: 每次拼接的 analysis_code 数量，默认是 1。
+    """
+    methods = parser.parse_methods_by_file(code_file)
 
     # 初始化原始 prompts
     original_prompts = prompts
@@ -379,14 +343,18 @@ def generate():
     processed_count = 0          # 成功处理的计数
     error_count = 0              # 异常发生的计数
 
-    # 遍历 methods 列表
-    for index, analysis_code in enumerate(methods, start=1):  # 添加索引从 1 开始
+    # 遍历 methods 列表，按 batch_size 分组
+    for batch_index in range(0, total_methods, batch_size):
         try:
+            # 获取当前批次的 analysis_code
+            batch_methods = methods[batch_index:batch_index + batch_size]
+
             # 深拷贝 prompts，确保每次循环独立
             conversation = copy.deepcopy(original_prompts)
 
-            # 拼接 analysis_code 到 prompts 的第二个元素的 content 后面
-            conversation[1]["content"] += analysis_code
+            # 拼接所有 analysis_code 到 prompts 的第二个元素的 content 后面
+            analysis_code_combined = "\n".join(batch_methods)
+            conversation[1]["content"] += analysis_code_combined
 
             # 调用 GPT 模型
             response = client.chat.completions.create(
@@ -397,7 +365,7 @@ def generate():
             ).choices[0].message.content
 
             # 在控制台输出返回值
-            print(f"Processing method {index}/{total_methods}")
+            print(f"Processing batch {batch_index + 1}-{min(batch_index + batch_size, total_methods)}/{total_methods}")
             print(f"Response from GPT:\n{response}\n")
 
             # 保存当前对话到文件
@@ -407,22 +375,22 @@ def generate():
                     "content": response
                 }
             )
-
             save_conversation_to_file(output_file, conversation)
 
             # 统计已处理数
-            processed_count += 1
+            processed_count += len(batch_methods)
 
         except Exception as e:
             # 捕获异常并输出
-            print(f"Error processing method {index}/{total_methods}: {e}")
+            print(f"Error processing batch {batch_index + 1}-{min(batch_index + batch_size, total_methods)}: {e}")
 
             # 统计错误次数
-            error_count += 1
+            error_count += len(batch_methods)
 
         # 输出当前统计信息
         print(f"Progress: {processed_count}/{total_methods} methods processed successfully.")
         print(f"Errors encountered so far: {error_count}\n")
+
 
 
 def save_conversation_to_file(filename, conversation):
@@ -433,4 +401,6 @@ def save_conversation_to_file(filename, conversation):
 
 
 if __name__ == "__main__":
-    generate()
+    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-aws-java-sdk-core.txt'
+    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-aws-java-sdk-core.txt"
+    generate(output_file, code_file, 1)
