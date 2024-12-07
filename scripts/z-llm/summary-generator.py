@@ -263,7 +263,7 @@ public class A{
 }
 
 
-[Positive Analysis Result]:
+[Positive Analysis Result]: 
 
 <PropagationRule>
             <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
@@ -401,6 +401,6 @@ def save_conversation_to_file(filename, conversation):
 
 
 if __name__ == "__main__":
-    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-aws-java-sdk-core.txt'
-    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-aws-java-sdk-core.txt"
+    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-fastjson.txt'
+    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-fastjson.txt"
     generate(output_file, code_file, 1)

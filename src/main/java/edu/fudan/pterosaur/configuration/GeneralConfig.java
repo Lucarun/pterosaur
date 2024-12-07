@@ -59,6 +59,9 @@ public class GeneralConfig {
     @Value("${vulexp.upstream.jarPath}")
     public String vulexpUpstreamJarPath;
 
+    @Value("${sink.classPath}")
+    public String sinkClassPath;
+
     public List<String> scannedMybatisXmlDirs;
 
     public List<String> sootInputPaths;

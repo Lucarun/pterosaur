@@ -99,3 +99,7 @@ vulexp:
     jarPath: /Users/fortsun/Desktop/test/sca-testcases/components/tomcat-embedded-core/tomcat-embed-core-9.0.74.jar
   #    jarPath: /Users/fortsun/Desktop/test/sca-testcases/components/retrofit/retrofit-2.4.0.jar
 #    jarPath: /Users/fortsun/Desktop/test/sca-testcases/components/logback-classic/logback-classic-1.2.11.jar
+
+
+sink:
+  classPath: /Users/luca/dev/2025/pterosaur/output/popular-components/z-sink-class/sink.jar

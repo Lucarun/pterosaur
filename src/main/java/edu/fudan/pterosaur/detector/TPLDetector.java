@@ -1,14 +1,23 @@
 package edu.fudan.pterosaur.detector;
 
+import edu.fudan.pterosaur.configuration.GeneralConfig;
 import edu.fudan.pterosaur.configuration.GeneralList;
+import javassist.*;
+import javassist.Modifier;
+import javassist.bytecode.Bytecode;
+import javassist.bytecode.CodeAttribute;
+import javassist.bytecode.ConstPool;
+import javassist.bytecode.LineNumberAttribute;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import soot.*;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.annotation.PostConstruct;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -17,6 +26,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
+import java.util.jar.JarOutputStream;
+import java.util.jar.Manifest;
 
 /**
  * User: luca
@@ -30,6 +43,49 @@ public class TPLDetector {
 
     @Autowired
     GeneralList generalList;
+
+    @Autowired
+    GeneralConfig generalConfig;
+
+    @PostConstruct
+    void init() {
+        // 创建ClassPool并将JAR文件添加到ClassPool
+        ClassPool pool = ClassPool.getDefault();
+        try {
+            for (String path : generalList.sootInputPaths) {
+                File file = new File(path);
+                if (file.isFile() && path.endsWith(".jar")) {
+                    // 如果是 JAR 文件，直接添加到 ClassPool
+                    pool.appendClassPath(file.getAbsolutePath());
+                } else if (file.isDirectory()) {
+                    // 如果是文件夹，递归处理其中的 JAR 文件
+                    loadJarsFromDirectory(path, pool);
+                }
+            }
+        } catch (NotFoundException e) {
+            throw new RuntimeException("Failed to add JAR paths to ClassPool", e);
+        }
+    }
+
+    // 递归加载文件夹中的所有 JAR 文件
+    private void loadJarsFromDirectory(String directoryPath, ClassPool pool) throws NotFoundException {
+        File directory = new File(directoryPath);
+        if (!directory.isDirectory()) {
+            return; // 如果不是文件夹，直接返回
+        }
+
+        // 遍历文件夹中的每个文件或子文件夹
+        for (File file : directory.listFiles()) {
+            if (file.isDirectory()) {
+                // 如果是子文件夹，递归处理
+                loadJarsFromDirectory(file.getAbsolutePath(), pool);
+            } else if (file.isFile() && file.getName().endsWith(".jar")) {
+                // 如果是 JAR 文件，将其添加到 ClassPool
+                pool.appendClassPath(file.getAbsolutePath());
+            }
+        }
+    }
+
 
     public void detect() {
         Collection<SootClass> classSnapshot = new ArrayList<>(Scene.v().getApplicationClasses());
@@ -59,6 +115,9 @@ public class TPLDetector {
 
 
     private void detectThirdPartyCalls(SootClass appClass, List list) {
+
+        boolean needWrite = false;
+
         try {
             Iterator<SootMethod> methodIterator = appClass.getMethods().iterator();
             while (methodIterator.hasNext()) {
@@ -117,6 +176,13 @@ public class TPLDetector {
                             System.out.println("Method: " + method.getSignature() +
                                     " calls third-party method: " + calledMethodSignature);
                             list.add(method.getSignature() + "--->" + calledMethodSignature);
+
+
+                            // 在此插入插桩代码
+                            boolean judge = instrumentMethod(appClass, method, calledMethod);
+                            if (judge){
+                                needWrite = true;
+                            }
                         }
 
                     }
@@ -125,6 +191,11 @@ public class TPLDetector {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        if (needWrite){
+            // After instrumenting all methods, save the class to a new JAR
+            saveToNewJar(appClass, generalConfig.sinkClassPath);
         }
     }
 
@@ -155,4 +226,193 @@ public class TPLDetector {
         }
         return false;
     }
+
+
+
+    private void saveToNewJar(SootClass appClass, String outputJarPath) {
+        try {
+            // First, check if the JAR file exists
+            File jarFile = new File(outputJarPath);
+            boolean isNewJar = !jarFile.exists();
+
+            // Prepare the output JAR file stream
+            FileOutputStream fos = new FileOutputStream(outputJarPath, true);  // true to append
+            JarOutputStream jarOut;
+
+            // If the JAR file exists, we need to append it
+            if (!isNewJar) {
+                jarOut = new JarOutputStream(fos);
+                // Copy existing entries to the new JAR to avoid losing them
+                try (JarFile existingJarFile = new JarFile(jarFile)) {
+                    addAllEntriesWithoutClass(existingJarFile, jarOut, appClass.getName().replace('.', '/') + ".class");
+                }
+            } else {
+                // If it's a new JAR, we can create a new JAR file stream
+                jarOut = new JarOutputStream(fos, new Manifest());
+            }
+
+            // Prepare the bytecode of the modified class using Javassist
+            ClassPool pool = ClassPool.getDefault();
+            CtClass ctClass = pool.get(appClass.getName());
+
+            // Get bytecode of the modified class
+            byte[] bytecode = ctClass.toBytecode();
+
+            // We will save the modified class files
+            String classFilePath = appClass.getName().replace('.', '/') + ".class";
+
+            // Create the new entry for the modified class
+            jarOut.putNextEntry(new JarEntry(classFilePath));
+            jarOut.write(bytecode);
+            jarOut.closeEntry(); // Close the entry
+
+            // Close the JAR output stream
+            jarOut.close();
+            fos.close();
+
+            System.out.println("JAR file saved to " + outputJarPath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addAllEntriesWithoutClass(JarFile jarFile, JarOutputStream jarOut, String excludedClass) throws IOException {
+        // Copy all entries from the existing jar except the excluded class
+        jarFile.stream().forEach(entry -> {
+            try {
+                if (!entry.getName().equals(excludedClass)) {
+                    jarOut.putNextEntry(new JarEntry(entry.getName()));
+                    try (InputStream input = jarFile.getInputStream(entry)) {
+                        byte[] buffer = new byte[1024];
+                        int length;
+                        while ((length = input.read(buffer)) != -1) {
+                            jarOut.write(buffer, 0, length);
+                        }
+                    }
+                    jarOut.closeEntry();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private boolean instrumentMethod(SootClass appClass, SootMethod method, SootMethod calledMethod) {
+        try {
+            // 使用Javassist插桩
+            ClassPool pool = ClassPool.getDefault();
+            CtClass ctClass = pool.get(appClass.getName());
+            CtMethod ctMethod = ctClass.getDeclaredMethod(method.getName());
+
+            // 获取方法调用的返回值类型
+            Type returnType = calledMethod.getReturnType();
+
+            // 在调用calledMethod的下一句插入获取返回值的代码
+            ctMethod.instrument(new ExprEditor() {
+                public void edit(MethodCall m) throws CannotCompileException {
+                    if (m.getMethodName().equals(calledMethod.getName())) {
+                        if (returnType instanceof VoidType) {
+                            // 对于无返回值的方法
+                            m.replace("{ $proceed($$); }");
+                        } else {
+                            // 对于有返回值的方法，使用$_来存储返回值
+                            m.replace("{ $_ = $proceed($$); com.example.demo.Instrument.sink1($_); }");
+                        }
+
+                        // 检查是否为实例方法
+                        try {
+                            if (!Modifier.isStatic(m.getMethod().getModifiers())) {
+                                // 插入代码，使用 $0 获取调用该方法的实例对象
+                                m.replace("{ com.example.demo.Instrument.sink2($0); $proceed($$); }");
+                            }
+                        } catch (NotFoundException e) {
+                            System.out.println("Modifier.isStatic check failed");
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+
+            // 如果返回值是引用类型
+//            if (returnType instanceof RefType) {
+//                String returnClassName = ((RefType) returnType).getClassName();
+//                CtClass returnCtClass = pool.get(returnClassName);
+//
+//                // 如果返回值是String类型
+//                if (returnClassName.equals("java.lang.String")) {
+//                    ctMethod.insertAfter("com.example.demo.Instrument.sink($_);", true);
+//                } else {
+//                    // 返回值是复杂对象类型，遍历其字段并插入sink调用
+//                    CtField[] fields = returnCtClass.getDeclaredFields();
+//
+//                    for (CtField field : fields) {
+//                        ctMethod.insertAfter("com.example.demo.Instrument.sink($_." + field.getName() + ");", true);
+//                    }
+//                }
+//            } else if (!(returnType instanceof VoidType)) {
+//                // 对于其他类型的返回值，假设为基本类型（例如int, boolean等）
+//                ctMethod.insertAfter("com.example.demo.Instrument.sink($_);", true);
+//            }
+
+            // 直接将this作为参数传递给sink方法，如果是实例方法
+            if (!Modifier.isStatic(method.getModifiers())) {
+                ctMethod.insertAfter("com.example.demo.Instrument.sink2(this);", true);
+            }
+
+            // 保存修改后的类
+            ctClass.writeFile();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    private int findCalledMethodLineNumber(CtMethod ctMethod, SootMethod calledMethod) {
+        try {
+            // 获取该方法的字节码指令
+            CodeAttribute codeAttribute = ctMethod.getMethodInfo().getCodeAttribute();
+            LineNumberAttribute ainfo = (LineNumberAttribute) codeAttribute.getAttribute("LineNumberTable");
+            if (ainfo == null) {
+                throw new CannotCompileException("no line number info");
+            } else {
+
+                for (int i =0; i < ainfo.tableLength(); i++){
+                }
+
+                LineNumberAttribute.Pc pc = ainfo.toNearPc(1);
+                int lineNum = pc.line;
+                int index = pc.index;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return -1;  // 如果没有找到，返回-1
+    }
+
+
+    private void instrumentThisFields(CtMethod ctMethod) throws NotFoundException, CannotCompileException {
+        // 对this对象的字段进行插桩
+        CtClass thisClass = ctMethod.getDeclaringClass();
+        CtField[] fields = thisClass.getDeclaredFields();
+
+        // 遍历this对象的字段并插入sink
+        for (CtField field : fields) {
+            String fieldName = field.getName();
+            String getterMethodName = "get" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);  // 生成getter方法名
+
+            try {
+                // 通过getter方法访问字段
+                CtMethod getterMethod = thisClass.getDeclaredMethod(getterMethodName);
+                ctMethod.insertAfter("com.example.demo.Instrument.sink(this." + getterMethod.getName() + "());");
+            } catch (Exception e) {
+                // 如果没有getter方法，直接访问字段（如果允许）
+                ctMethod.insertAfter("com.example.demo.Instrument.sink(this." + fieldName + ");");
+            }
+        }
+    }
+
 }
