@@ -101,7 +101,7 @@ public class TPLDetector {
             detectThirdPartyCalls(sootClass, list);
             // 每处理完一个 SootClass，计数器加1
             int count = counter.incrementAndGet();
-            System.out.println("Processed SootClass count: " + count+ " : " + sootClass.getName());
+            //System.out.println("Processed SootClass count: " + count+ " : " + sootClass.getName());
         }
 
         try (FileWriter writer = new FileWriter("output/tpl.txt")) {
@@ -312,22 +312,39 @@ public class TPLDetector {
             ctMethod.instrument(new ExprEditor() {
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getMethodName().equals(calledMethod.getName())) {
-                        if (returnType instanceof VoidType) {
-                            // 对于无返回值的方法
-                            m.replace("{ $proceed($$); }");
-                        } else {
-                            // 对于有返回值的方法，使用$_来存储返回值
-                            m.replace("{ $_ = $proceed($$); com.example.demo.Instrument.sink1($_); }");
+
+
+                        boolean flag = false;
+                        try{
+                            if (!Modifier.isStatic(m.getMethod().getModifiers())){
+                                flag = true;
+                            }
+                        }catch (Exception e){
+                            System.out.println("check static failed : " + m);
+                            e.printStackTrace();
                         }
 
-                        // 检查是否为实例方法
+                        StringBuilder str = new StringBuilder();
+                        AtomicInteger index = new AtomicInteger(1);
+
+
                         try {
-                            if (!Modifier.isStatic(m.getMethod().getModifiers())) {
-                                // 插入代码，使用 $0 获取调用该方法的实例对象
-                                m.replace("{ com.example.demo.Instrument.sink2($0); $proceed($$); }");
+                            if (!(returnType instanceof VoidType)) {
+                                str.append("{ $_ = $proceed($$); ");
+                                generateSinkCalls(str, "$_", returnType, 3, index);
+                            } else {
+                                str.append("{ $proceed($$); ");
                             }
-                        } catch (NotFoundException e) {
-                            System.out.println("Modifier.isStatic check failed");
+                            if (flag) {
+                                generateSinkCalls(str, "$0", returnType, 3, index);
+                            }
+                            str.append("}");
+
+                            System.out.println("flag : " + flag);
+                            System.out.println("replace str : " + str.toString());
+                            m.replace(str.toString());
+                        } catch (Exception e) {
+                            System.out.println("instrument sink failed : " + m);
                             e.printStackTrace();
                         }
                     }
@@ -356,9 +373,9 @@ public class TPLDetector {
 //            }
 
             // 直接将this作为参数传递给sink方法，如果是实例方法
-            if (!Modifier.isStatic(method.getModifiers())) {
-                ctMethod.insertAfter("com.example.demo.Instrument.sink2(this);", true);
-            }
+//            if (!Modifier.isStatic(method.getModifiers())) {
+//                ctMethod.insertAfter("com.example.demo.Instrument.sink2(this);", true);
+//            }
 
             // 保存修改后的类
             ctClass.writeFile();
@@ -412,6 +429,47 @@ public class TPLDetector {
                 // 如果没有getter方法，直接访问字段（如果允许）
                 ctMethod.insertAfter("com.example.demo.Instrument.sink(this." + fieldName + ");");
             }
+        }
+    }
+
+
+    /**
+     * 递归生成访问嵌套字段的代码
+     * @param str StringBuilder 用于构建插入代码的字符串
+     * @param currentObj 当前对象的字符串表示
+     * @param currentType 当前对象的类型
+     * @param depth 递归深度
+     */
+    private void generateSinkCalls(StringBuilder str, String currentObj, Type currentType, int depth, AtomicInteger index) {
+        if (depth <= 0) {
+            return;
+        }
+
+        System.out.println("index is : " + index.get());
+        if (index.get() != 1){
+            str.append("com.example.demo.Instrument.sink" + index + "(").append(currentObj).append("); ");
+        }
+
+        index.incrementAndGet();
+
+        if(!(currentType instanceof RefType)){
+            return;
+        }
+
+
+        SootClass sootClass = ((RefType) currentType).getSootClass();
+        if (sootClass.getPackageName().startsWith("java.") || sootClass.getPackageName().startsWith("javax.")){
+            return;
+        }
+
+        for (SootField field : sootClass.getFields()) {
+
+            if (Modifier.isPrivate(field.getModifiers())) {
+                System.out.println("skip as private : " + field + " in " +  sootClass.getName());
+                continue;
+            }
+            String fieldAccess = currentObj + "." + field.getName();
+            generateSinkCalls(str, fieldAccess, field.getType(), depth - 1, index);
         }
     }
 
