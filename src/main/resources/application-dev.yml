@@ -26,11 +26,11 @@ list:
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-1
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/downstream-2
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/hutool-core/test
-    - /Users/luca/dev/2025/pterosaur/output/popular-components/fastjson/downstream
+#    - /Users/luca/dev/2025/pterosaur/output/popular-components/fastjson/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/aliyun-java-sdk-core/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/amqp-client/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/aws-java-sdk-core/downstream
-#    - /Users/luca/dev/2025/pterosaur/output/popular-components/guava/downstream
+    - /Users/luca/dev/2025/pterosaur/output/popular-components/guava/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/kubernetes-client/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/minio/downstream
 #    - /Users/luca/dev/2025/pterosaur/output/popular-components/weixin-java-miniapp/downstream
@@ -47,7 +47,7 @@ list:
     - cn.hutool.http
   targetPackages:
 #    - cn.hutool.core
-    - com.alibaba.fastjson
+#    - com.alibaba.fastjson
 #    - com.aliyuncs.auth
 #    - com.aliyuncs.endpoint
 #    - com.aliyuncs.exceptions
@@ -61,8 +61,8 @@ list:
 #    - com.aliyuncs.utils
 #    - com.rabbitmq
 #    - com.amazonaws
-#    - com.google.common
-#    - com.google.thirdparty
+    - com.google.common
+    - com.google.thirdparty
 #    - io.fabric8.kubernetes.client
 #    - io.minio
 #    - cn.binarywang.wx.miniapp

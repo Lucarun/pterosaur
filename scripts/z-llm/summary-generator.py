@@ -20,7 +20,7 @@ use_portkey = False  # set to True if you want to use Portkey to log all the pro
 # .ai/
 
 EVAL_MODEL_TEMPERATURE = 0.2
-EVAL_MODEL_MAX_TOKENS = 1500
+EVAL_MODEL_MAX_TOKENS = 3000
 
 from openai import OpenAI
 
@@ -328,6 +328,9 @@ def get_code_from_file(file_path):
         return None
 
 
+import time
+import copy
+
 def generate(output_file, code_file, batch_size=1):
     """
     批量处理 methods 列表，将指定数量的 analysis_code 拼接到 prompts 中进行 GPT 调用。
@@ -345,47 +348,58 @@ def generate(output_file, code_file, batch_size=1):
 
     # 遍历 methods 列表，按 batch_size 分组
     for batch_index in range(0, total_methods, batch_size):
-        try:
-            # 获取当前批次的 analysis_code
-            batch_methods = methods[batch_index:batch_index + batch_size]
+        retries = 0  # 重试计数
+        success = False  # 标记当前批次处理是否成功
 
-            # 深拷贝 prompts，确保每次循环独立
-            conversation = copy.deepcopy(original_prompts)
+        while retries < 3 and not success:  # 最多重试 2 次
+            try:
+                # 获取当前批次的 analysis_code
+                batch_methods = methods[batch_index:batch_index + batch_size]
 
-            # 拼接所有 analysis_code 到 prompts 的第二个元素的 content 后面
-            analysis_code_combined = "\n".join(batch_methods)
-            conversation[1]["content"] += analysis_code_combined
+                # 深拷贝 prompts，确保每次循环独立
+                conversation = copy.deepcopy(original_prompts)
 
-            # 调用 GPT 模型
-            response = client.chat.completions.create(
-                model=EVAL_MODEL,
-                messages=conversation,
-                max_tokens=EVAL_MODEL_MAX_TOKENS,  # 限制返回值大小
-                temperature=EVAL_MODEL_TEMPERATURE  # 提高准确性和简洁性
-            ).choices[0].message.content
+                # 拼接所有 analysis_code 到 prompts 的第二个元素的 content 后面
+                analysis_code_combined = "\n".join(batch_methods)
+                conversation[1]["content"] += analysis_code_combined
 
-            # 在控制台输出返回值
-            print(f"Processing batch {batch_index + 1}-{min(batch_index + batch_size, total_methods)}/{total_methods}")
-            print(f"Response from GPT:\n{response}\n")
+                # 调用 GPT 模型
+                response = client.chat.completions.create(
+                    model=EVAL_MODEL,
+                    messages=conversation,
+                    max_tokens=EVAL_MODEL_MAX_TOKENS,  # 限制返回值大小
+                    temperature=EVAL_MODEL_TEMPERATURE  # 提高准确性和简洁性
+                ).choices[0].message.content
 
-            # 保存当前对话到文件
-            conversation.append(
-                {
-                    "role": "assistant",
-                    "content": response
-                }
-            )
-            save_conversation_to_file(output_file, conversation)
+                # 在控制台输出返回值
+                print(f"Processing batch {batch_index + 1}-{min(batch_index + batch_size, total_methods)}/{total_methods}")
+                print(f"Response from GPT:\n{response}\n")
 
-            # 统计已处理数
-            processed_count += len(batch_methods)
+                # 保存当前对话到文件
+                conversation.append(
+                    {
+                        "role": "assistant",
+                        "content": response
+                    }
+                )
+                save_conversation_to_file(output_file, conversation)
 
-        except Exception as e:
-            # 捕获异常并输出
-            print(f"Error processing batch {batch_index + 1}-{min(batch_index + batch_size, total_methods)}: {e}")
+                # 统计已处理数
+                processed_count += len(batch_methods)
+                success = True  # 标记当前批次处理成功
 
-            # 统计错误次数
-            error_count += len(batch_methods)
+            except Exception as e:
+                # 捕获异常并输出
+                print(f"Error processing batch {batch_index + 1}-{min(batch_index + batch_size, total_methods)}: {e}")
+
+                # 统计错误次数
+                error_count += len(batch_methods)
+                retries += 1  # 增加重试计数
+
+                # 如果还有重试机会，等待一段时间
+                if retries < 3:
+                    print(f"Retrying... ({retries}/2)")
+                    time.sleep(5)  # 等待 2 秒再重试
 
         # 输出当前统计信息
         print(f"Progress: {processed_count}/{total_methods} methods processed successfully.")
@@ -401,6 +415,6 @@ def save_conversation_to_file(filename, conversation):
 
 
 if __name__ == "__main__":
-    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-fastjson.txt'
-    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-fastjson.txt"
+    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-guava.txt'
+    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-guava.txt"
     generate(output_file, code_file, 1)

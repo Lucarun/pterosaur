@@ -26,6 +26,7 @@ def extract_propagation_rules(file_path, output_file):
 
             # 提取PropagationRule内容
             rule_content = content[start_index + len(start_tag):end_index].strip()
+            rule_content = rule_content.replace("&lt;init&gt;", "init")
             rules.append(rule_content)
 
             # 查找下一个块
@@ -46,8 +47,8 @@ def extract_propagation_rules(file_path, output_file):
 if __name__ == "__main__":
 
     # 示例调用
-    propagation_input_txt = "/Users/luca/dev/2025/pterosaur/llm/output/conversation-fastjson.txt"  # 输入XML文件路径
-    propagation_output_txt = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule.txt"  # 输出文件路径
+    propagation_input_txt = "/Users/luca/dev/2025/pterosaur/llm/output/conversation-aliyun-java-sdk-core.txt"  # 输入XML文件路径
+    propagation_output_txt = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-aliyun-java-sdk-core.txt"  # 输出文件路径
 
     # 确保输入文件存在
     if not os.path.exists(propagation_input_txt):
