@@ -1,5 +1,5 @@
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000100</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -27,7 +27,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000101</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -52,7 +52,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000102</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -74,7 +74,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000103</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -102,7 +102,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000104</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -130,7 +130,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000105</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -158,7 +158,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000106</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -185,7 +185,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000107</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -212,7 +212,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000108</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -239,7 +239,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000109</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -266,7 +266,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000110</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -292,7 +292,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000111</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -319,7 +319,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000112</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -346,7 +346,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000113</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -374,7 +374,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000114</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -402,7 +402,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000115</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -430,7 +430,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000116</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -451,7 +451,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000117</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -478,7 +478,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000118</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -505,7 +505,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000119</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -530,7 +530,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000120</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -557,7 +557,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000121</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -584,7 +584,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000122</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -601,7 +601,7 @@
         <ParamType>java.util.Collection</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 instanceof com.google.common.collect.ImmutableSet && !(p1 instanceof java.util.SortedSet) && !p1.isPartialView()</Condition>
+    <Condition>p1 instanceof com.google.common.collect.ImmutableSet &amp;&amp; !(p1 instanceof java.util.SortedSet) &amp;&amp; !p1.isPartialView()</Condition>
     <InArguments>0</InArguments>
     <OutArguments>return</OutArguments>
     <Comment>
@@ -610,7 +610,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000123</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -636,7 +636,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000124</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -662,7 +662,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000004</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000125</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -688,7 +688,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000126</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -715,7 +715,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000127</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -738,7 +738,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000128</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -762,7 +762,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000129</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -789,7 +789,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000130</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -816,7 +816,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000131</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -843,7 +843,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000132</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -867,7 +867,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000133</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -891,7 +891,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000134</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -918,7 +918,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000135</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -947,7 +947,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000136</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -976,7 +976,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000137</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1005,7 +1005,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000138</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -1032,7 +1032,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000139</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1060,7 +1060,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000140</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -1088,7 +1088,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000141</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1112,7 +1112,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000142</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -1137,7 +1137,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000143</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1164,7 +1164,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000144</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1190,7 +1190,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000145</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1216,7 +1216,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000146</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1242,7 +1242,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000004</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000147</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1268,7 +1268,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000148</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1291,7 +1291,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000149</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1314,7 +1314,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000150</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1338,7 +1338,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000151</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1365,7 +1365,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000152</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1392,7 +1392,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000153</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1419,7 +1419,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000154</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1443,7 +1443,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000155</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1460,7 +1460,7 @@
         <ParamType>java.util.Map</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 instanceof com.google.common.collect.ImmutableMap && !(p1 instanceof java.util.SortedMap) && !p1.isPartialView()</Condition>
+    <Condition>p1 instanceof com.google.common.collect.ImmutableMap &amp;&amp; !(p1 instanceof java.util.SortedMap) &amp;&amp; !p1.isPartialView()</Condition>
     <InArguments>0</InArguments>
     <OutArguments>return</OutArguments>
     <Comment>
@@ -1469,7 +1469,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000156</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1495,7 +1495,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000157</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1521,7 +1521,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000158</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1548,7 +1548,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000159</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1572,7 +1572,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000160</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1594,7 +1594,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000161</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1618,7 +1618,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000162</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1646,7 +1646,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000163</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1674,7 +1674,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000164</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -1702,7 +1702,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000165</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1724,7 +1724,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000166</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1751,7 +1751,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000167</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1779,7 +1779,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000168</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -1806,7 +1806,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000169</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1830,7 +1830,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000170</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1858,7 +1858,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000171</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1886,7 +1886,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000172</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1913,7 +1913,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000173</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1940,7 +1940,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000174</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -1968,7 +1968,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000175</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2001,7 +2001,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000176</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2029,7 +2029,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000177</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2057,7 +2057,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000178</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -2084,7 +2084,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000179</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2108,7 +2108,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000180</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2135,7 +2135,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000181</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2159,7 +2159,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000182</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2187,7 +2187,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000183</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2215,7 +2215,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000184</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2243,7 +2243,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000185</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2270,7 +2270,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000186</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2292,7 +2292,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000187</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2314,7 +2314,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000188</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2341,7 +2341,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000189</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2367,7 +2367,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000190</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2394,7 +2394,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000191</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2422,7 +2422,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000192</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2450,7 +2450,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000193</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2478,7 +2478,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000194</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2506,7 +2506,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000195</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2533,7 +2533,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000196</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2558,7 +2558,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000197</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2587,7 +2587,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000198</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2615,7 +2615,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000199</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2643,7 +2643,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000200</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2667,7 +2667,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000201</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2695,7 +2695,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000202</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2722,7 +2722,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000203</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2749,7 +2749,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000204</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2776,7 +2776,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000205</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2804,7 +2804,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000206</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2834,7 +2834,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000207</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2863,7 +2863,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000208</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2891,7 +2891,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000209</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2918,7 +2918,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000210</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -2945,7 +2945,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000211</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2969,7 +2969,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000212</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -2996,7 +2996,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000213</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3018,7 +3018,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000214</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3044,7 +3044,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000215</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3070,7 +3070,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000216</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3095,7 +3095,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000217</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3123,7 +3123,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000218</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3151,7 +3151,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000219</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3178,7 +3178,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000220</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3202,7 +3202,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000221</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3229,7 +3229,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000222</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3256,7 +3256,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000223</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3283,7 +3283,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000224</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3310,7 +3310,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000225</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3338,7 +3338,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000226</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3368,7 +3368,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000227</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3390,7 +3390,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000228</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3415,7 +3415,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000229</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3443,7 +3443,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000230</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3460,7 +3460,7 @@
         <ParamType>com.google.common.collect.Multimap</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>!p1.isEmpty() && !(p1 instanceof com.google.common.collect.ImmutableListMultimap && p1.isPartialView())</Condition>
+    <Condition>!p1.isEmpty() &amp;&amp; !(p1 instanceof com.google.common.collect.ImmutableListMultimap &amp;&amp; p1.isPartialView())</Condition>
     <InArguments>0</InArguments>
     <OutArguments>return</OutArguments>
     <Comment>
@@ -3470,7 +3470,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000231</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3501,7 +3501,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000232</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3529,7 +3529,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000233</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3556,7 +3556,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000234</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3584,7 +3584,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000235</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3611,7 +3611,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000236</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3640,7 +3640,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000237</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3667,7 +3667,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000238</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3694,7 +3694,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000239</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3721,7 +3721,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000240</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3743,7 +3743,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000241</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.primitives</Value>
@@ -3765,7 +3765,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000242</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3793,7 +3793,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000243</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3821,7 +3821,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000244</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3842,7 +3842,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000245</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3869,7 +3869,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000246</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -3896,7 +3896,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000247</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3923,7 +3923,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000248</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3950,7 +3950,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000249</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -3977,7 +3977,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000250</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4008,7 +4008,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000251</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4038,7 +4038,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000252</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4064,7 +4064,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000253</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4090,7 +4090,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000254</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4114,7 +4114,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000255</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4141,7 +4141,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000256</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4168,7 +4168,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000257</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4192,7 +4192,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000258</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4219,7 +4219,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000259</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4246,7 +4246,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000260</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4271,7 +4271,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000261</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -4298,7 +4298,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000262</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -4325,7 +4325,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000263</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -4352,7 +4352,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000264</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4376,7 +4376,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000265</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4407,7 +4407,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000266</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.cache</Value>
@@ -4434,7 +4434,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000267</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4461,7 +4461,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000268</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4488,7 +4488,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000269</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4517,7 +4517,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000270</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4547,7 +4547,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000271</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4574,7 +4574,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000272</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4598,7 +4598,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000273</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.collect</Value>
@@ -4622,7 +4622,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000274</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4649,7 +4649,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000275</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4678,7 +4678,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000276</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>
@@ -4707,7 +4707,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000277</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.google.common.base</Value>

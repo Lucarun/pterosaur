@@ -266,6 +266,17 @@ public class TPLDetector {
             jarOut.write(bytecode);
             jarOut.closeEntry(); // Close the entry
 
+
+            // Save inner classes
+            CtClass[] innerClasses = ctClass.getNestedClasses();
+            for (CtClass innerClass : innerClasses) {
+                String innerClassFilePath = innerClass.getName().replace('.', '/') + ".class";
+                byte[] innerBytecode = innerClass.toBytecode();
+                jarOut.putNextEntry(new JarEntry(innerClassFilePath));
+                jarOut.write(innerBytecode);
+                jarOut.closeEntry();
+            }
+
             // Close the JAR output stream
             jarOut.close();
             fos.close();
@@ -299,6 +310,7 @@ public class TPLDetector {
     }
 
     private boolean instrumentMethod(SootClass appClass, SootMethod method, SootMethod calledMethod) {
+        System.out.println("Starting Instrument : " + method.getSignature() + " --> " + calledMethod.getSignature());
         try {
             // 使用Javassist插桩
             ClassPool pool = ClassPool.getDefault();
@@ -313,7 +325,6 @@ public class TPLDetector {
                 public void edit(MethodCall m) throws CannotCompileException {
                     if (m.getMethodName().equals(calledMethod.getName())) {
 
-
                         boolean flag = false;
                         try{
                             if (!Modifier.isStatic(m.getMethod().getModifiers())){
@@ -322,6 +333,7 @@ public class TPLDetector {
                         }catch (Exception e){
                             System.out.println("check static failed : " + m);
                             e.printStackTrace();
+                            return;
                         }
 
                         StringBuilder str = new StringBuilder();
@@ -341,10 +353,10 @@ public class TPLDetector {
                             str.append("}");
 
                             System.out.println("flag : " + flag);
-                            System.out.println("replace str : " + str.toString());
+                            System.out.println("replace str : " + str);
                             m.replace(str.toString());
                         } catch (Exception e) {
-                            System.out.println("instrument sink failed : " + m);
+                            System.out.println("instrument sink failed : " + e.getMessage());
                             e.printStackTrace();
                         }
                     }
@@ -372,13 +384,12 @@ public class TPLDetector {
 //                ctMethod.insertAfter("com.example.demo.Instrument.sink($_);", true);
 //            }
 
-            // 直接将this作为参数传递给sink方法，如果是实例方法
+            //直接将this作为参数传递给sink方法，如果是实例方法
 //            if (!Modifier.isStatic(method.getModifiers())) {
 //                ctMethod.insertAfter("com.example.demo.Instrument.sink2(this);", true);
 //            }
 
-            // 保存修改后的类
-            ctClass.writeFile();
+//            ctClass.writeFile();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -446,31 +457,68 @@ public class TPLDetector {
         }
 
         System.out.println("index is : " + index.get());
-        if (index.get() != 1){
+        if (index.get() != 1) {
             str.append("com.example.demo.Instrument.sink" + index + "(").append(currentObj).append("); ");
         }
 
         index.incrementAndGet();
 
-        if(!(currentType instanceof RefType)){
+        if (!(currentType instanceof RefType)) {
             return;
         }
-
 
         SootClass sootClass = ((RefType) currentType).getSootClass();
-        if (sootClass.getPackageName().startsWith("java.") || sootClass.getPackageName().startsWith("javax.")){
+        if (sootClass.getPackageName().startsWith("java.") || sootClass.getPackageName().startsWith("javax.")) {
             return;
         }
 
-        for (SootField field : sootClass.getFields()) {
+        try {
+            ClassPool pool = ClassPool.getDefault();
+            CtClass ctClass = pool.get(sootClass.getName());
 
-            if (Modifier.isPrivate(field.getModifiers())) {
-                System.out.println("skip as private : " + field + " in " +  sootClass.getName());
-                continue;
+            boolean changePublic = false;
+            // 遍历字段并修改修饰符
+            for (SootField field : sootClass.getFields()) {
+                CtField ctField = ctClass.getDeclaredField(field.getName());
+                if(ctField.getModifiers() != 1){
+                    ctField.setModifiers(Modifier.PUBLIC); // 将字段设置为 public
+                    System.out.println("change to public : " + field + " in " + sootClass.getName());
+                    changePublic = true;
+                }
             }
-            String fieldAccess = currentObj + "." + field.getName();
-            generateSinkCalls(str, fieldAccess, field.getType(), depth - 1, index);
+
+            if (changePublic){
+                System.out.println("there is public change, will save to the new sink jar : " + sootClass.getName());
+
+                // 检查是否是内部类
+                if (sootClass.getName().contains("$")) {
+                    // 获取外部类的名称
+                    String outerClassName = sootClass.getName().substring(0, sootClass.getName().indexOf('$'));
+                    SootClass outerClass = Scene.v().getSootClass(outerClassName);
+                    // 保存外部类
+                    saveToNewJar(outerClass, generalConfig.sinkClassPath);
+                }
+                // 保存内部类
+                saveToNewJar(sootClass, generalConfig.sinkClassPath);
+            }
+
+            // 再次遍历并使用 CtField 来判断修饰符
+            for (SootField field : sootClass.getFields()) {
+                CtField ctField = ctClass.getDeclaredField(field.getName());
+                // 使用 ctField 的修饰符来判断
+                if (Modifier.isPrivate(ctField.getModifiers())) {
+                    System.out.println("skip as private : " + field + " in " + sootClass.getName());
+                    continue;
+                }
+                String fieldAccess = currentObj + "." + field.getName();
+                generateSinkCalls(str, fieldAccess, field.getType(), depth - 1, index);
+            }
+        } catch (NotFoundException e) {
+            e.printStackTrace();
         }
     }
+
+
+
 
 }
