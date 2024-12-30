@@ -2,6 +2,7 @@ package edu.fudan.pterosaur.detector;
 
 import edu.fudan.pterosaur.configuration.GeneralConfig;
 import edu.fudan.pterosaur.configuration.GeneralList;
+import edu.fudan.pterosaur.util.LocalStorage;
 import javassist.*;
 import javassist.Modifier;
 import javassist.bytecode.Bytecode;
@@ -272,9 +273,14 @@ public class TPLDetector {
             for (CtClass innerClass : innerClasses) {
                 String innerClassFilePath = innerClass.getName().replace('.', '/') + ".class";
                 byte[] innerBytecode = innerClass.toBytecode();
-                jarOut.putNextEntry(new JarEntry(innerClassFilePath));
-                jarOut.write(innerBytecode);
-                jarOut.closeEntry();
+                try {
+                    jarOut.putNextEntry(new JarEntry(innerClassFilePath));
+                    jarOut.write(innerBytecode);
+                    jarOut.closeEntry();
+                }catch (Exception e){
+                    System.out.println("add inner class failed : " + e.getMessage());
+                    e.printStackTrace();
+                }
             }
 
             // Close the JAR output stream
@@ -337,18 +343,22 @@ public class TPLDetector {
                         }
 
                         StringBuilder str = new StringBuilder();
-                        AtomicInteger index = new AtomicInteger(1);
+
+
+                        if (!LocalStorage.map.containsKey(appClass.getName())){
+                            LocalStorage.map.put(appClass.getName(), new AtomicInteger(1));
+                        }
 
 
                         try {
                             if (!(returnType instanceof VoidType)) {
                                 str.append("{ $_ = $proceed($$); ");
-                                generateSinkCalls(str, "$_", returnType, 3, index);
+                                generateSinkCalls(str, "$_", returnType, 3, LocalStorage.map.get(appClass.getName()));
                             } else {
                                 str.append("{ $proceed($$); ");
                             }
                             if (flag) {
-                                generateSinkCalls(str, "$0", returnType, 3, index);
+                                generateSinkCalls(str, "$0", returnType, 3, LocalStorage.map.get(appClass.getName()));
                             }
                             str.append("}");
 
@@ -457,9 +467,9 @@ public class TPLDetector {
         }
 
         System.out.println("index is : " + index.get());
-        if (index.get() != 1) {
+//        if (index.get() != 1) {
             str.append("com.example.demo.Instrument.sink" + index + "(").append(currentObj).append("); ");
-        }
+//        }
 
         index.incrementAndGet();
 
@@ -480,8 +490,19 @@ public class TPLDetector {
             // 遍历字段并修改修饰符
             for (SootField field : sootClass.getFields()) {
                 CtField ctField = ctClass.getDeclaredField(field.getName());
-                if(ctField.getModifiers() != 1){
-                    ctField.setModifiers(Modifier.PUBLIC); // 将字段设置为 public
+                int currentModifiers = ctField.getModifiers();
+
+                // 如果是 private，替换为 public，保留其他修饰符
+                if (Modifier.isPrivate(currentModifiers)) {
+                    // 将 private 替换为 public，保留其他修饰符
+                    int newModifiers = (currentModifiers & ~Modifier.PRIVATE) | Modifier.PUBLIC;
+                    ctField.setModifiers(newModifiers);
+                    System.out.println("changed from private to public : " + field + " in " + sootClass.getName());
+                    changePublic = true;
+                } else if ((currentModifiers & Modifier.PUBLIC) == 0) {
+                    // 如果不是 private 且不是 public，添加 public
+                    int newModifiers = currentModifiers | Modifier.PUBLIC;
+                    ctField.setModifiers(newModifiers);
                     System.out.println("change to public : " + field + " in " + sootClass.getName());
                     changePublic = true;
                 }
@@ -495,11 +516,12 @@ public class TPLDetector {
                     // 获取外部类的名称
                     String outerClassName = sootClass.getName().substring(0, sootClass.getName().indexOf('$'));
                     SootClass outerClass = Scene.v().getSootClass(outerClassName);
-                    // 保存外部类
+                    // 保存外部类+内部类
                     saveToNewJar(outerClass, generalConfig.sinkClassPath);
+                }else{
+                    // 保存正常类
+                    saveToNewJar(sootClass, generalConfig.sinkClassPath);
                 }
-                // 保存内部类
-                saveToNewJar(sootClass, generalConfig.sinkClassPath);
             }
 
             // 再次遍历并使用 CtField 来判断修饰符

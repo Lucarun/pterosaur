@@ -1,9 +1,12 @@
 import re
 
 def escape_condition(condition):
-    """替换 XML 中的 `&` 符号为 `&amp;`"""
-    # 使用正则替换所有 `&` 为 `&amp;`
-    return re.sub(r'&', '&amp;', condition)
+    """转义Condition标签中的特殊字符"""
+    # 替换 <= 和 >=
+    condition = condition.replace("<=", "&lt;=").replace(">=", "&gt;=")
+    # 替换 & 为 &amp;
+    condition = condition.replace("&", "&amp;")
+    return condition
 
 def update_rule_ids(file_path, start_number):
     """更新文件中所有的 RuleID，根据给定的起始数字递增"""
@@ -43,8 +46,8 @@ def increment_rule_id(match, start_number):
 
 def main():
     # 设置文件路径和起始的 RuleID
-    file_path = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-guava.txt"  # 这里可以修改为你的文件路径
-    start_number = 100  # 设置开始的 RuleID 数字
+    file_path = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-aws-java-sdk-core.txt"  # 这里可以修改为你的文件路径
+    start_number = 500  # 设置开始的 RuleID 数字
 
     # 调用函数更新文件
     update_rule_ids(file_path, start_number)

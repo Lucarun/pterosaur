@@ -1,5 +1,5 @@
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000500</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.util</Value>
@@ -23,7 +23,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000501</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.util</Value>
@@ -48,7 +48,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000502</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -76,7 +76,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000503</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -104,7 +104,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000504</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -131,7 +131,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000505</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -158,7 +158,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000506</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -181,7 +181,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000507</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -208,7 +208,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000508</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -237,7 +237,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000509</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -266,7 +266,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000510</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -295,7 +295,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000511</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.util.json</Value>
@@ -322,7 +322,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000512</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -340,7 +340,7 @@
         <ParamType>java.lang.String</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 != null && p2 != null</Condition>
+    <Condition>p1 != null &amp;amp;&amp;amp; p2 != null</Condition>
     <InArguments>0</InArguments>
     <OutArguments>this.accessKey</OutArguments>
     <Comment>
@@ -350,7 +350,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000513</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -378,7 +378,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000514</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.client.builder</Value>
@@ -406,7 +406,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000515</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.client.builder</Value>
@@ -434,7 +434,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000516</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -458,7 +458,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000517</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -488,7 +488,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000518</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -518,7 +518,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000519</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -548,7 +548,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000004</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000520</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -578,7 +578,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000521</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -602,7 +602,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000522</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -626,7 +626,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000523</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken</Value>
@@ -647,7 +647,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000524</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift</Value>
@@ -669,7 +669,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000525</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift.model</Value>
@@ -692,7 +692,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000526</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift.model</Value>
@@ -716,7 +716,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000527</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift.model</Value>
@@ -737,7 +737,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000528</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3</Value>
@@ -760,7 +760,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000529</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.model</Value>
@@ -783,7 +783,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000530</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.s3.iterable</Value>
@@ -808,7 +808,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000531</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshiftserverless</Value>
@@ -829,7 +829,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000532</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshiftserverless.model</Value>
@@ -853,7 +853,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000533</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshiftserverless.model</Value>
@@ -877,7 +877,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000534</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -901,7 +901,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000535</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -928,7 +928,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000536</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -955,7 +955,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000537</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -980,7 +980,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000538</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -1007,7 +1007,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000539</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -1031,7 +1031,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000540</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth.profile.internal</Value>
@@ -1058,7 +1058,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000541</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth.profile.internal</Value>
@@ -1085,7 +1085,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000542</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth.profile.internal</Value>
@@ -1112,7 +1112,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000543</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken.model</Value>
@@ -1135,7 +1135,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000544</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift.model</Value>
@@ -1158,7 +1158,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000545</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth.profile</Value>
@@ -1186,7 +1186,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000546</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth.profile</Value>
@@ -1214,7 +1214,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000547</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth.profile</Value>
@@ -1242,7 +1242,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000548</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -1266,7 +1266,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000549</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift.model</Value>
@@ -1290,7 +1290,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000550</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.redshift.model</Value>
@@ -1313,7 +1313,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000551</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -1337,7 +1337,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID> <!-- Randomly generated ID -->
+    <RuleID>RULE-ID-PROPAGATION-00000552</RuleID> <!-- Randomly generated ID -->
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -1364,7 +1364,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000553</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -1391,7 +1391,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000554</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws</Value>
@@ -1418,7 +1418,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000555</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.util</Value>
@@ -1445,7 +1445,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000556</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.util</Value>
@@ -1473,7 +1473,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000557</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.ssooidc</Value>
@@ -1497,7 +1497,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000558</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.ssooidc.model</Value>
@@ -1520,7 +1520,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000559</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken.model</Value>
@@ -1541,7 +1541,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000560</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken.model</Value>
@@ -1565,7 +1565,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000561</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken.model</Value>
@@ -1589,7 +1589,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000562</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken.model</Value>
@@ -1613,7 +1613,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000563</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.services.securitytoken.model</Value>
@@ -1637,7 +1637,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000564</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>
@@ -1664,7 +1664,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000565</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.amazonaws.auth</Value>

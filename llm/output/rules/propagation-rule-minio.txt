@@ -1,5 +1,5 @@
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000300</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -24,7 +24,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000301</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -48,7 +48,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000302</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -75,7 +75,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000303</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -102,7 +102,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000304</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -126,7 +126,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000305</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -151,7 +151,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000306</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -175,7 +175,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000307</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -201,7 +201,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000308</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -228,7 +228,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000309</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -255,7 +255,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000310</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -278,7 +278,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000311</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -306,7 +306,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000312</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -334,7 +334,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000313</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -358,7 +358,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000314</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -382,7 +382,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000315</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -410,7 +410,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000316</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -434,7 +434,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000317</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -461,7 +461,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000318</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -485,7 +485,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000319</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -512,7 +512,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000320</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -536,7 +536,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000321</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -561,7 +561,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000322</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -588,7 +588,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000323</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -615,7 +615,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000324</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -642,7 +642,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000325</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -669,7 +669,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000326</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -696,7 +696,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000327</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -723,7 +723,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000328</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -747,7 +747,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000329</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -774,7 +774,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000330</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -799,7 +799,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000331</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -823,7 +823,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000332</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -850,7 +850,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000333</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -877,7 +877,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000334</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -901,7 +901,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000335</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -928,7 +928,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000336</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -955,7 +955,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000337</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -982,7 +982,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000338</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1009,7 +1009,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000339</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1036,7 +1036,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000340</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1060,7 +1060,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000341</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1088,7 +1088,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000342</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1115,7 +1115,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000343</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1142,7 +1142,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000344</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1168,7 +1168,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000345</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1193,7 +1193,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000346</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1215,7 +1215,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000347</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1239,7 +1239,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000348</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1266,7 +1266,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000349</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1294,7 +1294,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000350</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1323,7 +1323,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000351</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1352,7 +1352,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000352</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1381,7 +1381,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000353</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1405,7 +1405,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000354</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1432,7 +1432,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000355</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1457,7 +1457,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000356</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1484,7 +1484,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000357</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -1511,7 +1511,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000358</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.credentials</Value>
@@ -1520,7 +1520,7 @@
             <Value>StaticProvider</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1540,7 +1540,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000359</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.credentials</Value>
@@ -1549,7 +1549,7 @@
             <Value>StaticProvider</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1569,7 +1569,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000360</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.credentials</Value>
@@ -1578,7 +1578,7 @@
             <Value>StaticProvider</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1598,7 +1598,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000361</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1625,7 +1625,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000362</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1652,7 +1652,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000363</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1679,7 +1679,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000364</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1707,7 +1707,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000365</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1731,7 +1731,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000366</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1758,7 +1758,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000367</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1785,7 +1785,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000368</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -1812,7 +1812,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000369</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1840,7 +1840,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000370</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -1871,7 +1871,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000371</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -1901,7 +1901,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000372</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -1928,7 +1928,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000373</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -1952,7 +1952,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000374</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -1981,7 +1981,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000375</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -2010,7 +2010,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000376</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.http</Value>
@@ -2039,7 +2039,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000377</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2066,7 +2066,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000378</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2094,7 +2094,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000379</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2121,7 +2121,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000380</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2148,7 +2148,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000381</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2175,7 +2175,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000382</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2202,7 +2202,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000383</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2226,7 +2226,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000384</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2253,7 +2253,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000385</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2280,7 +2280,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000386</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2307,7 +2307,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000387</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2334,7 +2334,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000388</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2358,7 +2358,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000389</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2385,7 +2385,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000390</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2402,7 +2402,7 @@
         <ParamType>java.lang.Long</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 != null && p1.longValue() > 0</Condition>
+    <Condition>p1 != null &amp;&amp; p1.longValue() > 0</Condition>
     <InArguments>0</InArguments>
     <OutArguments>this.operations</OutArguments>
     <Comment>
@@ -2412,7 +2412,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000391</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2436,7 +2436,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000392</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2460,7 +2460,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000393</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2487,7 +2487,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000394</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2514,7 +2514,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000395</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2541,7 +2541,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000396</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2568,7 +2568,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000397</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2591,7 +2591,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000398</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2615,7 +2615,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000399</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2642,7 +2642,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000400</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2669,7 +2669,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000401</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2696,7 +2696,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000402</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio</Value>
@@ -2723,7 +2723,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000403</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>io.minio.messages</Value>
@@ -2732,7 +2732,7 @@
             <Value>DeleteObject</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
