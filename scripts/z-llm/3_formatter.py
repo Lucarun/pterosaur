@@ -6,7 +6,21 @@ def escape_condition(condition):
     condition = condition.replace("<=", "&lt;=").replace(">=", "&gt;=")
     # 替换 & 为 &amp;
     condition = condition.replace("&", "&amp;")
+    # 使用正则表达式替换小于号和大于号，前后有空格
+    condition = re.sub(r'(?<=\s)<(?=\s)', '&lt;', condition)  # 匹配前后都有空格的小于号
+    condition = re.sub(r'(?<=\s)>(?=\s)', '&gt;', condition)  # 匹配前后都有空格的大于号
     return condition
+
+
+def replace_special_tags(content):
+    """替换特殊标签"""
+    # 替换 &lt;init&gt; 为 init
+    content = content.replace("&lt;init&gt;", "init")
+    # 可以添加更多的替换规则
+    """替换特殊标签"""
+    # 将 <init> 替换为 &lt;init&gt;
+    content = content.replace("<init>", "&lt;init&gt;")
+    return content
 
 def update_rule_ids(file_path, start_number):
     """更新文件中所有的 RuleID，根据给定的起始数字递增"""
@@ -30,6 +44,8 @@ def update_rule_ids(file_path, start_number):
     # 替换 <Condition> 标签中的 & 为 &amp;
     updated_content = re.sub(r'<Condition>(.*?)</Condition>', lambda m: f'<Condition>{escape_condition(m.group(1))}</Condition>', updated_content)
 
+    updated_content = replace_special_tags(updated_content)
+
     # 将修改后的内容写回文件
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(updated_content)
@@ -46,8 +62,8 @@ def increment_rule_id(match, start_number):
 
 def main():
     # 设置文件路径和起始的 RuleID
-    file_path = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-aws-java-sdk-core.txt"  # 这里可以修改为你的文件路径
-    start_number = 500  # 设置开始的 RuleID 数字
+    file_path = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-guava.txt"  # 这里可以修改为你的文件路径
+    start_number = 1  # 设置开始的 RuleID 数字
 
     # 调用函数更新文件
     update_rule_ids(file_path, start_number)

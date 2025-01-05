@@ -59,9 +59,9 @@ def compare_json_files(file1, file2, output_file):
 
 
 def main():
-    file1 = '/Users/luca/dev/research/output/Analyze_result-aws-java-sdk-core-tpl.json'
-    file2 = '/Users/luca/dev/research/output/Analyze_result-aws-java-sdk-core-tplno-summary.json'
-    output_file = '/Users/luca/dev/research/output/mismatched_results_aws-java-sdk-core.json'
+    file1 = '/Users/luca/dev/research/output/Analyze_result-guava-tpl.json'
+    file2 = '/Users/luca/dev/research/output/Analyze_result-guava-tplno-summary.json'
+    output_file = '/Users/luca/dev/research/output/mismatched_results_guava.json'
 
     # 调用比较函数
     compare_json_files(file1, file2, output_file)

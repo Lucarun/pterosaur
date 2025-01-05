@@ -125,7 +125,7 @@
     <InArguments>0</InArguments>
     <OutArguments>this</OutArguments>
     <Comment>
-    - The data flow shows that `p1` (the parameter of `SdkClientException.<init>`) is transferred through the constructor chain to `RuntimeException.<init>`.
+    - The data flow shows that `p1` (the parameter of `SdkClientException.&lt;init&gt;`) is transferred through the constructor chain to `RuntimeException.&lt;init&gt;`.
     - The flow is no condition
     </Comment>
 </PropagationRule>
@@ -1658,7 +1658,7 @@
     <InArguments>0</InArguments>
     <OutArguments>this.providerName</OutArguments>
     <Comment>
-    - The data flow shows that the parameter of `<init>(java.lang.String)` is transferred into `this.providerName`.
+    - The data flow shows that the parameter of `&lt;init&gt;(java.lang.String)` is transferred into `this.providerName`.
     - The flow is no condition as the parameter is `null`.
     </Comment>
 </PropagationRule>

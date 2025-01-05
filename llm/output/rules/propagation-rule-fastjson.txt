@@ -505,7 +505,7 @@
             <Value>JSONObject</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -771,7 +771,7 @@
             <Value>SerializeWriter</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -799,7 +799,7 @@
             <Value>JSONSerializer</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -826,7 +826,7 @@
             <Value>JSONSerializer</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -983,7 +983,7 @@
             <Value>SerializeConfig</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value>init</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
