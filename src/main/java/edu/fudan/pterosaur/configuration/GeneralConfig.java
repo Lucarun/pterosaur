@@ -44,6 +44,9 @@ public class GeneralConfig {
     @Value("${analysis.conditionSummarySwitcher}")
     public boolean conditionSummarySwitcher;
 
+    @Value("${analysis.onlyOneCallee}")
+    public boolean onlyOneCallee;
+
     @Value("${analysis.sparkSwitcher}")
     public boolean sparkSwitcher;
 

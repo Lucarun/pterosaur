@@ -47,8 +47,8 @@ def extract_propagation_rules(file_path, output_file):
 if __name__ == "__main__":
 
     # 示例调用
-    propagation_input_txt = "/Users/luca/dev/2025/pterosaur/llm/output/conversation-guava.txt"  # 输入XML文件路径
-    propagation_output_txt = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-guava.txt"  # 输出文件路径
+    propagation_input_txt = "/Users/luca/dev/2025/pterosaur/llm/output/conversation-aliyun-java-sdk-core.txt"  # 输入XML文件路径
+    propagation_output_txt = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-aliyun-java-sdk-core.txt"  # 输出文件路径
 
     # 确保输入文件存在
     if not os.path.exists(propagation_input_txt):

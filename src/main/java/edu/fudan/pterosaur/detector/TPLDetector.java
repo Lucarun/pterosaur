@@ -19,10 +19,7 @@ import soot.jimple.Stmt;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -47,6 +44,8 @@ public class TPLDetector {
 
     @Autowired
     GeneralConfig generalConfig;
+
+    private static Set<String> calleeRecord = new HashSet<>();
 
     @PostConstruct
     void init() {
@@ -180,12 +179,21 @@ public class TPLDetector {
 
 
                             // 在此插入插桩代码
-                            boolean judge = instrumentMethod(appClass, method, calledMethod);
-                            if (judge){
-                                needWrite = true;
+                            if (generalConfig.onlyOneCallee){
+                                if (!calleeRecord.contains(calledMethodSignature.toString())){
+                                    calleeRecord.add(calledMethodSignature.toString());
+                                    boolean judge = instrumentMethod(appClass, method, calledMethod);
+                                    if (judge){
+                                        needWrite = true;
+                                    }
+                                }
+                            }else{
+                                boolean judge = instrumentMethod(appClass, method, calledMethod);
+                                if (judge){
+                                    needWrite = true;
+                                }
                             }
                         }
-
                     }
                 }
             }

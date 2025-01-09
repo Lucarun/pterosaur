@@ -62,7 +62,7 @@ def increment_rule_id(match, start_number):
 
 def main():
     # 设置文件路径和起始的 RuleID
-    file_path = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-guava.txt"  # 这里可以修改为你的文件路径
+    file_path = "/Users/luca/dev/2025/pterosaur/llm/output/rules/propagation-rule-aliyun-java-sdk-core.txt"  # 这里可以修改为你的文件路径
     start_number = 1  # 设置开始的 RuleID 数字
 
     # 调用函数更新文件

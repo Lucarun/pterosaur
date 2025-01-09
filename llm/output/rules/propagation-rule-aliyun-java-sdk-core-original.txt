@@ -86,7 +86,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000004</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -95,7 +95,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="false" extends="false"/>
     </FunctionIdentifier>
@@ -113,7 +113,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000005</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -122,7 +122,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="false" extends="true"/>
     </FunctionIdentifier>
@@ -141,7 +141,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000006</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -150,7 +150,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="false" extends="true"/>
     </FunctionIdentifier>
@@ -169,7 +169,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000007</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -178,7 +178,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="false" extends="true"/>
     </FunctionIdentifier>
@@ -197,7 +197,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000008</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.profile</Value>
@@ -217,7 +217,7 @@
         <ParamType>java.lang.String</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>null == <com.aliyuncs.profile.DefaultProfile: java.util.List endpoints> &amp;&amp; null == $r2</Condition>
+    <Condition>null == <com.aliyuncs.profile.DefaultProfile: java.util.List endpoints> && null == $r2</Condition>
     <InArguments>0,1,2,3</InArguments>
     <OutArguments>this.endpoints</OutArguments>
     <Comment>
@@ -227,7 +227,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000009</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.profile</Value>
@@ -257,7 +257,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000010</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -283,7 +283,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000011</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -308,7 +308,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000012</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -317,7 +317,7 @@
             <Value>HttpRequest</Value>
         </ClassName>
         <FunctionName>
-            <Value>init</Value>
+            <Value>&lt;init&gt;</Value>
         </FunctionName>
         <ApplyTo implements="false" overrides="false" extends="false"/>
     </FunctionIdentifier>
@@ -335,7 +335,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000013</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.utils</Value>
@@ -390,7 +390,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000014</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -417,7 +417,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000015</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -443,7 +443,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000016</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -469,7 +469,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000017</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000004</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -495,7 +495,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000018</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.transform</Value>
@@ -504,7 +504,7 @@
             <Value>UnmarshallerContext</Value>
         </ClassName>
         <FunctionName>
-            <Value>init</Value>
+            <Value>&lt;init&gt;</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -512,13 +512,13 @@
     <HasPropagation>false</HasPropagation>
     <Comment>
     - This is a constructor for the class `UnmarshallerContext`.
-    - The method only invokes the superclass constructor `<java.lang.Object: void &lt;init&gt;()>` using `this`.
+    - The method only invokes the superclass constructor `<java.lang.Object: void <init>()>` using `this`.
     - There is no parameter input, no propagation, and no return data flow.
     </Comment>
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000019</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.transform</Value>
@@ -545,7 +545,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000020</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -572,7 +572,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000021</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -599,7 +599,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000022</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -626,7 +626,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000023</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -635,7 +635,7 @@
             <Value>BasicCredentials</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -653,7 +653,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000024</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -662,7 +662,7 @@
             <Value>BasicCredentials</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -680,7 +680,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000025</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -689,7 +689,7 @@
             <Value>KeyPairCredentials</Value>
         </ClassName>
         <FunctionName>
-            <Value>init</Value>
+            <Value>&lt;init&gt;</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -698,7 +698,7 @@
         <ParamType>java.lang.String</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 != null &amp;&amp; p2 != null</Condition>
+    <Condition>p1 != null && p2 != null</Condition>
     <InArguments>0</InArguments>
     <OutArguments>this.publicKeyId</OutArguments>
     <Comment>
@@ -708,7 +708,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000026</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -717,7 +717,7 @@
             <Value>KeyPairCredentials</Value>
         </ClassName>
         <FunctionName>
-            <Value>init</Value>
+            <Value>&lt;init&gt;</Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -726,7 +726,7 @@
         <ParamType>java.lang.String</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 != null &amp;&amp; p2 != null</Condition>
+    <Condition>p1 != null && p2 != null</Condition>
     <InArguments>1</InArguments>
     <OutArguments>this.privateKeySecret</OutArguments>
     <Comment>
@@ -736,7 +736,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000027</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -745,7 +745,7 @@
             <Value>StaticCredentialsProvider</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="false" extends="true"/>
     </FunctionIdentifier>
@@ -763,7 +763,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000028</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth.sts</Value>
@@ -772,7 +772,7 @@
             <Value>AssumeRoleRequest</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="false" extends="false"/>
     </FunctionIdentifier>
@@ -791,7 +791,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000029</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth.sts</Value>
@@ -818,7 +818,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000030</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.AcsRequest</Value>
@@ -846,7 +846,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000031</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth.sts</Value>
@@ -873,7 +873,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000032</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth.sts</Value>
@@ -900,7 +900,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000033</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth.sts</Value>
@@ -927,7 +927,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000034</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth.sts</Value>
@@ -954,7 +954,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000035</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -1026,7 +1026,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000036</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1035,7 +1035,7 @@
             <Value>ServerException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1055,7 +1055,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000037</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1064,7 +1064,7 @@
             <Value>ServerException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1084,7 +1084,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000038</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1093,7 +1093,7 @@
             <Value>ServerException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1113,7 +1113,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000039</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000004</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1122,7 +1122,7 @@
             <Value>ServerException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1142,7 +1142,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000040</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1151,7 +1151,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1171,7 +1171,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000041</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1180,7 +1180,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1200,7 +1200,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000042</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000003</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.exceptions</Value>
@@ -1209,7 +1209,7 @@
             <Value>ClientException</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1229,7 +1229,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000043</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.regions</Value>
@@ -1248,7 +1248,7 @@
         <ParamType>java.util.List</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 != null &amp;&amp; p2 != null &amp;&amp; p3 != null &amp;&amp; p3.iterator().hasNext() &amp;&amp; p1 in r5.getRegionIds()</Condition>
+    <Condition>p1 != null && p2 != null && p3 != null && p3.iterator().hasNext() && p1 in r5.getRegionIds()</Condition>
     <InArguments>2</InArguments>
     <OutArguments>return</OutArguments>
     <Comment>
@@ -1260,7 +1260,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000044</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.regions</Value>
@@ -1278,7 +1278,7 @@
         <ParamType>java.lang.String</ParamType>
     </Parameters>
     <HasPropagation>true</HasPropagation>
-    <Condition>p1 != null &amp;&amp; p1.iterator().hasNext() &amp;&amp; p2.equalsIgnoreCase(r3.getProductName())</Condition>
+    <Condition>p1 != null && p1.iterator().hasNext() && p2.equalsIgnoreCase(r3.getProductName())</Condition>
     <InArguments>0</InArguments>
     <OutArguments>return</OutArguments>
     <Comment>
@@ -1288,7 +1288,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000045</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.transform</Value>
@@ -1315,7 +1315,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000046</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -1341,7 +1341,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000047</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -1350,7 +1350,7 @@
             <Value>HttpRequest</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1369,7 +1369,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000048</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.http</Value>
@@ -1378,7 +1378,7 @@
             <Value>HttpRequest</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="true" overrides="true" extends="true"/>
     </FunctionIdentifier>
@@ -1397,7 +1397,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000049</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -1422,7 +1422,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000050</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -1446,7 +1446,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000051</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.auth</Value>
@@ -1473,7 +1473,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000052</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000001</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.regions</Value>
@@ -1482,7 +1482,7 @@
             <Value>ProductDomain</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="false" overrides="false" extends="false"/>
     </FunctionIdentifier>
@@ -1501,7 +1501,7 @@
 </PropagationRule>
 
 <PropagationRule>
-    <RuleID>RULE-ID-PROPAGATION-00000053</RuleID>
+    <RuleID>RULE-ID-PROPAGATION-00000002</RuleID>
     <FunctionIdentifier>
         <NamespaceName>
             <Value>com.aliyuncs.regions</Value>
@@ -1510,7 +1510,7 @@
             <Value>ProductDomain</Value>
         </ClassName>
         <FunctionName>
-            <Value>&lt;init&gt;</Value>
+            <Value><init></Value>
         </FunctionName>
         <ApplyTo implements="false" overrides="false" extends="false"/>
     </FunctionIdentifier>
