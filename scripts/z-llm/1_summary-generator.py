@@ -415,6 +415,6 @@ def save_conversation_to_file(filename, conversation):
 
 
 if __name__ == "__main__":
-    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-guava.txt'
-    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-guava.txt"
+    output_file = '/Users/luca/dev/2025/pterosaur/llm/output/conversation-weixin-java-miniapp.txt'
+    code_file = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-weixin-java-miniapp.txt"
     generate(output_file, code_file, 1)

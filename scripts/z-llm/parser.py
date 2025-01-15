@@ -84,5 +84,5 @@ def parse_methods_by_file(file_path):
 
 
 if __name__ == "__main__":
-    path = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-amqp-client.txt"
+    path = "/Users/luca/dev/2025/pterosaur/llm/input/code/IR-kubernetes-client.txt"
     parse_methods_by_file(path)
